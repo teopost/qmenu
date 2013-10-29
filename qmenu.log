@@ -1,0 +1,40 @@
+oracle9   , /dev/pts/2, 16/09/103, 15:03:22, pp.mnu       , [INIZIO LAVORO]
+oracle9   , /dev/pts/2, 16/09/103, 15:03:33, pp.mnu       , 6.   Menu............................................ 
+oracle9   , /dev/pts/2, 16/09/103, 15:04:02, model1.mnu   , [INIZIO LAVORO]
+oracle9   , /dev/pts/2, 16/09/103, 15:04:11, model1.mnu   , ls -lisa ; read a
+oracle9   , /dev/pts/2, 16/09/103, 15:04:14, model1.mnu   , ls -lisa ; read a
+oracle9   , /dev/pts/2, 16/09/103, 15:04:18, model1.mnu   , [FINE LAVORO]
+oracle9   , /dev/pts/2, 268435456/17/536884824, 0.0.0
+model.mnu    , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 0/1/1900, 0.0.0
+model1.mnu   , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 0/1/1900, 0.0.0
+model1.mnu   , [FINE LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.31.34
+model.mnu    , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.31.45
+model.mnu    , [FINE LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.32.55
+model1.mnu   , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.33.19
+model1.mnu   , [FINE LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.33.30
+model1.mnu   , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.33.34
+model1.mnu   , [FINE LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.34.1
+model1.mnu   , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.34.4
+model1.mnu   , [FINE LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.34.16
+model1.mnu   , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.34.21
+model1.mnu   , [FINE LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.35.18
+model1.mnu   , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.35.24
+model1.mnu   , [FINE LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.36.9
+model1.mnu   , [INIZIO LAVORO]
+oracle9   , /dev/pts/1, 23/9/2003, 15.36.28
+model1.mnu   , [FINE LAVORO]
