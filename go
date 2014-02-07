@@ -1,1 +1,1 @@
-gcc -o qmenu qmenu.c -lcurses
+gcc -Wall -o qmenu qmenu.c -lncurses
