@@ -4,10 +4,13 @@ qmenu.c - Gestore di menu
 --------------------------------------------------------------------------------
 Compilazione su sistema 3000 -> cc -o qmenu qmenu.c -lcurses 
 Compilazione su SCO          -> cc -xenix -lcurses -ltermcap -o qmenu qmenu.c
+Compilazione su Linux        -> gcc x -lncurses -o qmenu qmenu.c
 ================================================================================
 */
 /* Per Unix System V NCR -> #include <cursesr2>  */
-#include <curses.h>             
+#include <ncurses.h>             
+#include <stdlib.h>
+#include <string.h>
 #include <signal.h>
 #include <ctype.h>
 #include <time.h>
@@ -18,7 +21,7 @@ Compilazione su SCO          -> cc -xenix -lcurses -ltermcap -o qmenu qmenu.c
 #include <term.h>
 					/* COSTANTI GENERICHE                 */
 					/* ==================                 */
-#define VERSION "Rel. 5.0, 16/09/2003"	/* Versione del programma 	      */
+#define VERSION "Rel. 5.0.1, 07/02/2013"	/* Versione del programma 	      */
 #define SUPER   1			/* Pop-up  Stampanti Superutente      */
 #define USER    2 			/* Pop-up  Stampanti Utente           */
 #define ON      1			/* Costante stato ON                  */
@@ -226,10 +229,10 @@ struct tm *tptr;
 
 
 
-main(int argc, char **argv)		/* MODULO PRINCIPALE                  */
+int main(int argc, char **argv)		/* MODULO PRINCIPALE                  */
 {					/* =================                  */
 int errorlvl=0; 	 		/* Variabile controllo ritorno funz.  */
-int ii=0, c, c1, c2, t, idx; 		/* Variabili di utilizzo generale     */
+int ii=0, c, c1, t, idx; 		/* Variabili di utilizzo generale     */
 int k=0;
 int primavolta;				/* Primo utilizzo frecce e tastiera   */
 int tmpcnt,flg1,flg2;
@@ -320,7 +323,7 @@ strcpy(linea,"uuname -l > ");
 strcat(linea,nometemp);
 system(linea);
 infile=fopen(nometemp,"r");
-getline(sistema);
+getlineext(sistema);
 fclose(infile);
 unlink(nometemp);
 
@@ -466,7 +469,7 @@ while(1) 			/* inizio ciclo controllo menu'     */
 				continue;
 			}
 		}
-		if(errorlvl=loadmenu(imenu[ipmenu]))
+		if((errorlvl=loadmenu(imenu[ipmenu])))
 		{
 			alert(" ATTENZIONE ", " MENU CHIAMANTE MODIFICATO ");
 			goto the_end;
@@ -536,7 +539,7 @@ while(1) 			/* inizio ciclo controllo menu'     */
 				      break;
 				}
 				help_item=0;
-				while((a=getline(help_line[help_item]))!=EOF)
+				while((a=getlineext(help_line[help_item]))!=EOF)
 					help_item++;
 				help_item--;
 				fclose(infile);
@@ -596,9 +599,9 @@ while((a=getkey())!=FZ4);
 		strcpy(to_found,imenu[ipmenu]);
 		strcat(to_found,":");
 		if(primavolta!=0)
-			strncat(to_found,&scelta[curitem].desc,2);
+			strncat(to_found, scelta[curitem].desc, 2);
 		strcat(to_found,"\0");
-		if(junk=ext(to_found)==1)
+		if((junk=ext(to_found))==1)
 			alert(" ATTENZIONE ", " MENU FILE NON PRESENTE \0");
 		dispmenu();
 		if(primavolta!=0)
@@ -696,7 +699,7 @@ while((a=getkey())!=FZ4);
 				refresh();
 				goto the_end;
 			}
-            		if(errorlvl=loadmenu(imenu[ipmenu]))
+            		if((errorlvl=loadmenu(imenu[ipmenu])))
 			{
 				alert(" ATTENZIONE ", \
 				" MENU CHIAMANTE MODIFICATO ");
@@ -849,7 +852,7 @@ while((a=getkey())!=FZ4);
 				refresh();
 				goto the_end;
 			}
-            		if(errorlvl=loadmenu(imenu[ipmenu]))
+            		if((errorlvl=loadmenu(imenu[ipmenu])))
 			{
 				alert(" ATTENZIONE ", \
 				" MENU CHIAMANTE MODIFICATO ");
@@ -976,7 +979,7 @@ char menu_file[128];
 char buf0[3];
 char buf1[3];
 int sn;
-int ii,t,c0,c1,c,y,x,invoce,r,ik;
+int ii,t,c0,c1,c,y,x,invoce,r;
 int kk,fine,getmemo();
 int startpos;
 
@@ -1274,7 +1277,7 @@ while(1)
 	strncpy(scelta[ii].passw,linea,11);
 }
 
-ik=ipmenu;					/* Valori di Default	   */
+
 keydisp=1;
 for (t=0;t<=9;t++)
 {
@@ -1500,7 +1503,7 @@ refresh();
 
 int selectnext(int c)   	/* Cerca Argomento successivo da Frecce */
 {
-int y,x,t;
+int y,x;
 y=scelta[curitem].y;
 x=scelta[curitem].x;
 if (c==C_U)
@@ -1558,7 +1561,7 @@ if (c==C_L)
 return(curitem);
 }
 
-int getline(char *tamp)			/* Memorizza una riga fino al new-line*/
+int getlineext(char *tamp)			/* Memorizza una riga fino al new-line*/
 {
 int ii,c;
 ii=0;
@@ -1613,71 +1616,68 @@ return;
 */
 int chkpass(int tipo) 			/* Controllo parola Chiave  */
 {
-char cmpred[40]; 			/* Variabile utilizzata per paragone */
-char tmp_passwd[26];
-int ii=0;
+	char cmpred[40]; 			/* Variabile utilizzata per paragone */
+	char tmp_passwd[26];
+	int ii=0;
 
-switch(tipo)
-{
-	case MENU:
-		strcpy(tmp_passwd,scelta[curitem].passw);
-		break;
-	case SHELL:
-		strcpy(tmp_passwd, sh_passwd);
-		break;
-	case EDIT:
-		strcpy(tmp_passwd, edit_passwd);
-		break;
-	case SUPER_MENU:
-		strcpy(tmp_passwd, super_passwd);
-		break;
-	case PASSWD_MODE:
-		strcpy(tmp_passwd, super_passwd);
-		break;
-	default :
-		strcpy(tmp_passwd,pfu[tipo]);
-		break;
-}
+	switch(tipo)
+	{
+		case MENU:
+			strcpy(tmp_passwd,scelta[curitem].passw);
+			break;
+		case SHELL:
+			strcpy(tmp_passwd, sh_passwd);
+			break;
+		case EDIT:
+			strcpy(tmp_passwd, edit_passwd);
+			break;
+		case SUPER_MENU:
+			strcpy(tmp_passwd, super_passwd);
+			break;
+		case PASSWD_MODE:
+			strcpy(tmp_passwd, super_passwd);
+			break;
+		default :
+			strcpy(tmp_passwd,pfu[tipo]);
+			break;
+	}
 
-while(ii<=strlen(tmp_passwd))
-{
-	tmp_passwd[ii]=toupper(tmp_passwd[ii]);
-	ii++;
-}
+	while(ii<=strlen(tmp_passwd))
+	{
+		tmp_passwd[ii]=toupper(tmp_passwd[ii]);
+		ii++;
+	}
 
-tmp_passwd[ii]='\0';
+	tmp_passwd[ii]='\0';
 
-win(" ACCESSO RISERVATO ", 8,15,12,65);
-move(12,17);
-printw(" F4 - Esce ");
-standend();
-move(10,17);
-printw(" Inserire Password : ");
-standout();
-printw("                        ");
-move(10,38);
-refresh();
-getpasswd(cmpred);
-if (strcmp(cmpred,"ABORT") == 0) 
-	return 1;
-standout();
-if (strcmp(cmpred,tmp_passwd) != 0) 
-{
-	alert(" ATTENZIONE ", " PAROLA CHIAVE ERRATA ");
-	clear();
-	dispmenu();
-	selez(1);
-	return 1 ;
-}
-else
-	return 0;
+	win(" ACCESSO RISERVATO ", 8,15,12,65);
+	move(12,17);
+	printw(" F4 - Esce ");
+	standend();
+	move(10,17);
+	printw(" Inserire Password : ");
+	standout();
+	printw("                        ");
+	move(10,38);
+	refresh();
+	getpasswd(cmpred);
+	if (strcmp(cmpred,"ABORT") == 0) return 1;
+	standout();
+	if (strcmp(cmpred,tmp_passwd) != 0) 
+	{
+		alert(" ATTENZIONE ", " PAROLA CHIAVE ERRATA ");
+		clear();
+		dispmenu();
+		selez(1);
+		return 1 ;
+	} else {
+			return 0;
+	}
 }
 
 int chkinit() 				/* Controllo parola Chiave  */
 {
 char cmpred[40]; 			/* Variabile utilizzata per paragone */
-char tmp_passwd[26];
-int ii=0;
 
 	win(" ACCESSO RISERVATO ", 8,15,12,65);
 	move(12,17);
@@ -1705,27 +1705,27 @@ int ii=0;
 
 int ricerca_passwd(char *etichetta)
 {
-int opi;
-int c, c0, a=0;
-char tmp_linea[256];
-char linea[256];
+	int opi;
+	int a=0;
+	char tmp_linea[256];
+	char linea[256];
 
 	if ((infile=fopen("qmenu.cfg","r")) == NULL )
 	{
 		history_string("ERRORE, non riesco ad aprire qmenu.cfg");
-       		return 10;
-	}
-	else
-	{
-		while((opi=getline(linea)) != EOF) 
+     	return 10;
+	} else {
+		while((opi=getlineext(linea)) != EOF) 
 		{
 			a=0;
 			while(linea[a]!=0)
 			{
-				if (linea[a]!='=')
-					tmp_linea[a]=linea[a++];
-				else
+				if (linea[a]!='=') {
+					tmp_linea[a]=linea[a];
+					++a;
+				} else {
 					break;
+				}
 			}
 			tmp_linea[a]='\0';
 
@@ -1741,6 +1741,7 @@ char linea[256];
 	return 0;
 	}
 }
+
 inpsel(int op)				/* Mostra selezioni tastiera a video  */
 {
 char buf1[3];
@@ -1816,7 +1817,6 @@ if (stbuf.st_size > logfile_dim)	/* Se dim. max superata copio in bak */
 
 if((ofile=fopen("qmenu.log","a+")) != NULL)
 {  
-	fprintf(ofile,"");
 	fprintf(ofile,"%-10s, ",utente);
 	if (passwd_mode)
 		fprintf(ofile,"%s, ",ability_user);
@@ -1990,7 +1990,7 @@ void fine4()
 {
 alert(" ATTENZIONE ", " ERRORE DI MEMORIA, ESECUZIONE SOSPESA ");
 endwin();
-abort(SIGSEGV);
+abort();
 }
 
 void fine5()
@@ -2083,9 +2083,7 @@ selspool(int type_sel) 			/* Selezione le stampanti */
 int nprts;
 int row_pos, col_pos;
 char prts[16][32];
-char p[30];
 char prlist[256];
-char linea[32];
 int ia=0,iu,max_len=0,c,t,scan_pointer=0,a=0,item=0;
 nprts=0;
 
@@ -2219,7 +2217,6 @@ int ext(char *label)		/* Estrazione per Help della label  */
 	signed char c;
 	int h;
 	int a=0,kk=0;
-	int k=1;
 	int found=0;
 
 	if ((helpfile=fopen(hlp_filename,"r"))==NULL)
@@ -2240,7 +2237,7 @@ int ext(char *label)		/* Estrazione per Help della label  */
 				while(h!='[')
 				{
 					found=1;
-					a=getline(help_line[kk]);
+					a=getlineext(help_line[kk]);
 					h=help_line[kk][0];
 					kk++;
 				}
@@ -2261,8 +2258,8 @@ int ext(char *label)		/* Estrazione per Help della label  */
 
 void helper()
 {
-int a, pippo, j=0;
-int x=0,g=0,ch;
+int a, j=0;
+int x=0,ch;
 int c=0, r=0;
 
 	for(a=0; a!=help_item; a++)
@@ -2621,7 +2618,6 @@ int reverse;
 
 infoterm()		/* Stampa Info Terminale a Video */
 {
-int x_coord;
 char riga[80];
 
 sprintf(riga, "%s %s:%s,[%s] %s",sistema, utente, porta, termname(), lpdestenv);
@@ -2648,10 +2644,7 @@ confirm()
 int nprts;
 int row_pos, col_pos;
 char tag_item[16][32];
-char p[30];
-char prlist[256];
-char linea[32];
-int ia=0,iu,max_len=12,c,t,scan_pointer=0,a=0,item=0;
+int iu,max_len=12,c,t;
 
 nprts=2;
 strcpy(tag_item[0], "    No    ");
@@ -2985,9 +2978,10 @@ standend();
 
 dataoggi(char *datastr)		/* Estrae la data di oggi */
 {
-long tempo;
 
-/* tempo=time(0L); */
+//long tempo;
+
+//tempo=time(0L); 
 
 t1=time((time_t *)0); 
 tptr=localtime(&t1);
@@ -3138,8 +3132,6 @@ int win_option(char *winlist)		/* Selezione le stampanti */
 int nprts;
 int row_pos, col_pos;
 char prts[16][32];
-char p[30];
-char linea[32];
 int ia=0,iu,max_len=0,c,t,scan_pointer=0,a=0,item=0;
 nprts=0;
 
@@ -3426,7 +3418,6 @@ int loop_OK=TRUE;
 int trovato=FALSE;
 int abnormal=FALSE;
 char da_trovare[10];
-char result[40];
 int u;
 int s=0;
 
@@ -3439,8 +3430,8 @@ if ((infile=fopen("qmenu.frm","r")) == NULL)	/* Apertura file di form    */
 	history_string("ERRORE, non riesco ad aprire il file qmenu.frm");
        	return 10;
 }
-sprintf(da_trovare, "[%s]\0", forma);
-	while((opi=getline(linea)) != EOF) 
+sprintf(da_trovare, "[%s]", forma);
+	while((opi=getlineext(linea)) != EOF) 
 	{
 		if((trovato==TRUE)&&(linea[0]=='['))
 			trovato=FALSE;
@@ -3497,7 +3488,7 @@ disegna_form()
 {
 int top=0;
 int left=0;
-int a=0, b=0, aa=0;
+int a=0, b=0;
 int inizio=0, fine=0;
 int y=0;
 
