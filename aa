@@ -1,7 +1,0 @@
-signal(SIGINT,  fine1); 		/* Interruzione utente (^C, Del, Trap)*/
-signal(SIGFPE,  fine2);			/* Errore Aritmetico 		      */
-signal(SIGBUS,  fine3);			/* Bus Error     		      */
-signal(SIGSEGV, fine4);			/* Segmentation fault		      */
-signal(SIGTERM, fine5);			/* Segnale interruzione esterno       */
-signal(SIGALRM, templim);		/* Tempo di Inattiviva utente         */
-
