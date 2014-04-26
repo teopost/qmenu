@@ -1,0 +1,123 @@
+ This is a template sample of SUBMENU                                 E[TIME] 
+--------------------------------------------------------------------------------
+
+                                   C[TITLE]
+
+      Path: ${PATH}
+
+
+      Bash: ${BASH}
+
+
+
+
+
+
+
+            ^x.   Back to main menu                                ^
+
+             Selection:  [ &]
+
+                               c[MSG]
+--------------------------------------------------------------------------------
+ L[INFOTERM]                                                      E[MENUNAME]
+<X]=Menu' Precedente
+$$
+%1
+$submenu
+A menu called sumenu.mnu will be open
+
+%2
+ls -lisa; pause
+This item show shell file list
+
+%3
+
+
+
+%4
+
+
+
+%5
+
+
+
+%6
+
+
+
+%7
+
+
+
+%8
+
+
+
+%9
+
+
+
+%0
+
+
+
+%x
+return
+
+
+%%
+#[Display options]
+#=================
+TITOLO=Submenu title
+RVS_ROW=0,22
+
+#[Function key configuration]
+#============================
+NOKEYDISP
+#KEYDISP
+
+#ET1=
+#FZ1=
+#PW1=
+
+#ET2=
+#FZ2=
+#PW2=
+
+#ET3=
+#FZ3=
+#PW3=
+
+#ET4=
+#FZ4=
+#PW4=
+
+#ET5=
+#FZ5=
+#PW5=
+
+#ET6=
+#FZ6=
+#PW6=
+
+#ET7=
+#FZ7=
+#PW7=
+
+#ET8=
+#FZ8=
+#PW8=
+
+#ET9=
+#FZ9=
+#PW9=
+
+#ET10=
+#FZ10=
+#PW10=
+
+#[Others]
+SHELL=sh
+EDITOR=vi
