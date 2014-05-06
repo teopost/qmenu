@@ -8,9 +8,7 @@ Install ncurses library
 
 
     sudo apt-get install libncurses5-dev libncursesw5-dev
-    
-    ./go
-    
+    sh ./go
     chmod 777 ./qmenu
 
 Demo
