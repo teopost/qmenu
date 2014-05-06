@@ -1,13 +1,17 @@
 qmenu
 =====
 
-Compilaziome
+How compile on Ubuntu
 ---
 
-Per compilare il programma su ubuntu occorre installare la libreria ncurses
+Install ncurses library
 
 
-sudo apt-get install libncurses5-dev libncursesw5-dev
+    sudo apt-get install libncurses5-dev libncursesw5-dev
+    
+    ./go
+    
+    chmod 777 ./qmenu
 
 Demo
 ---
