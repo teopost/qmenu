@@ -17,6 +17,9 @@ Demo
 ![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
 
+Thanks
+---
+First version named appsel created by  [Giovanni Juan Oteri](https://twitter.com/giovannioteri)
 
 
 
