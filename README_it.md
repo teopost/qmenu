@@ -88,8 +88,26 @@ Esempio:
     ?????
 
 
-## Option area - TODO
+## Option area
 ===
+Questa sezione contiene una sezie di impostazioni generiche:
+
+    TITOLO - Titolo del menu
+    RVS_ROW=0,22 - Righe da mostrare in reverse. In questo caso la riga 0 e la riga 22
+    NOKEYDISP - Disabilita la visualizzazione automatica delle label dei tasti funzione (ET[1-10])
+    ET[1-10] - Testo mostrato per tasto funzione n se NOKEYDISP commentato
+    FZ[1-10] - Comando (shell) eseguito per il tastofunzione n
+    PW[1-10] - Password da impostare per tasto funzione n
+    SHELL=sh - Premendo shift-f1 viene avviata una sessione di shell con questa
+    EDITOR=vi - Premente shift-f2 viene avviato il vi con l'editing del menu attualmente in uso
+    
+    
+FZ1=f1
+PW1=f1
+    
+#KEYDISP
+    
+
 
 
 
