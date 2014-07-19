@@ -1,4 +1,4 @@
-# How work
+# How it work
 qmenu permette di creare in maniera semplice e intuitiva menu per interfacce a caratteri.
 Ogni menu è definito in un file (con estensione .mnu) che contiene sia l'aspetto visuale che la definizione delle varie voci.
 
@@ -8,13 +8,13 @@ Il file è suddiviso in 3 sezioni:
     2. Item Area
     3. Option Area
 
-Ogni area è delimitata dai seguenti caratteri
+Ogni area è delimitata dai caratteri $$ e %%
 
-	Screen area
+    Screen area
     $$
-	Item area
+    Item area
     %%
-	Option are
+    Option area
 
 ## Screen area
 Questa area va da inizio file fino al simbolo $$, e contiene il "disegno" vero e proprio del menu in formato testuale.
@@ -22,14 +22,14 @@ Ogni opzione di menu, per essere riconosciuta come selezionabile deve essere rac
 
 Esempio:
 
-	^1. Option 1^
-	^2. Option 2^
+    ^1. Option 1^
+    ^2. Option 2^
 
 Le opzioni si possono selezionare con la freccia della tastiera ma anche premendo la prima lettera della stringa
 
 All'interno di questa area si possono anche aggiungere alcune variabili con la sintassi:
 
-	x[NOME_VARIABILE]
+    x[NOME_VARIABILE]
 
 In pratica il nome della variabile è composto da un prefisso (x) e, fra parentesi quadre il nome della variabile. Questi sono i valori disponibili:
 
@@ -41,14 +41,15 @@ Nota: Se il simbolo viene messo maiuscolo il valore viene mostrato in reverse
 
 Le variabili possono assumere il seguente valore:
 
-    * TIME
-    * MENUNAME
-    * INFOTERM
-    * MNUTRACE
+    * TIME - Orario attuale
+    * MENUNAME - Nome del menu
+    * INFOTERM - Nome rel terminale
+    * MNUTRACE - Percorso dei menu
 
 Variabili speciali:
 
-* & - Posizione del cursore
+    & - Posizione del cursore
+    ${PATH} - Visualizza il contenuto della variabile d'ambiente PATH
 
 Esempio:
 
