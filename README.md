@@ -11,9 +11,9 @@ How compile on Ubuntu
     chmod 777 ./qmenu
     ./qmenu m_main.mnu
 
-
-
-
+Documentation in italian
+---
+[README_it.md]
 
 Thanks
 ---
