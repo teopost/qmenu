@@ -1,6 +1,3 @@
-qmenu
-=====
-
 ![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
 
