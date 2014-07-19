@@ -55,7 +55,39 @@ Esempio:
 
 	C[TITLE] - Titolo del menu centrato ed in reverse
 	
-## Item area - TODO
+## Item area
+In questa sezione, per ogni item di menu, si definisce:
+
+* l'azione da effettuare
+* Un eventuale messaggio di Help
+* ???
+
+Il formato da utilizzare per ogni item è composta da 4 righe:
+
+    1. Opzione di menu
+    2. Comando da eseguire
+    3. Messaggio di help da visualizzare
+    4. ???
+
+
+1. Nella prima riga inserire il primo carattere della stringa che contiene l'ozione di menu)
+2. Nella seconda riga, è possibile specificare:
+
+    * Un comando di shell
+    * Un sottomenu da aprire ($menuname without extension)
+    * Comando riservato (return per tornare al menu precedente, fine per uscire dal menu) 
+
+3. Nella terza riga specificare il messaggio di testo.
+Tale messaggio verrà mostrato in corrispondenza della variabile TITLE presente nella "Screen area"
+
+Esempio:
+
+    %1
+    ls -lisa; pause
+    This item show shell file list
+    ?????
+
+
 ## Option area - TODO
 ===
 
