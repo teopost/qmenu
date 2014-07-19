@@ -101,13 +101,7 @@ Questa sezione contiene una sezie di impostazioni generiche:
     SHELL=sh - Premendo shift-f1 viene avviata una sessione di shell con questa
     EDITOR=vi - Premente shift-f2 viene avviato il vi con l'editing del menu attualmente in uso
     
-    
-FZ1=f1
-PW1=f1
-    
-#KEYDISP
-    
-
+Ognuna di queste opzioni può essere commentata con il #
 
 
 
