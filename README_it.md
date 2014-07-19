@@ -8,6 +8,14 @@ Il file è suddiviso in 3 sezioni:
     2. Item Area
     3. Option Area
 
+Ogni area è delimitata dai seguenti caratteri
+
+	Screen area
+    $$
+	Item area
+    %%
+	Option are
+
 ## Screen area
 Questa area va da inizio file fino al simbolo $$, e contiene il "disegno" vero e proprio del menu in formato testuale.
 Ogni opzione di menu, per essere riconosciuta come selezionabile deve essere racchiuso fra il simbolo ^
