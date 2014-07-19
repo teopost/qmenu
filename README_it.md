@@ -89,7 +89,6 @@ Esempio:
 
 
 ## Option area
-===
 Questa sezione contiene una sezie di impostazioni generiche:
 
     TITOLO - Titolo del menu
