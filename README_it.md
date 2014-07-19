@@ -1,4 +1,4 @@
-# How it work
+# Come funziona
 qmenu permette di creare in maniera semplice e intuitiva menu per interfacce a caratteri.
 Ogni menu è definito in un file (con estensione .mnu) che contiene sia l'aspetto visuale che la definizione delle varie voci.
 
