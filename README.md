@@ -13,7 +13,7 @@ How compile on Ubuntu
 
 Documentation in italian
 ---
-[README_it.md]
+[README_it](README_it.md)
 
 Thanks
 ---
