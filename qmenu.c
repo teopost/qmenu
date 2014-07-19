@@ -513,7 +513,7 @@ int main (int argc, char **argv)
             }
             if ((errorlvl = loadmenu (imenu[ipmenu])))
             {
-                alert (" Warning ", " MENU CHIAMANTE MODIFICATO ");
+                alert (" Warning ", " PARENT MENU CHANGED ");
                 goto the_end;
             }
             clear ();
@@ -545,7 +545,7 @@ int main (int argc, char **argv)
                     {
                         if (errorlvl != 10)
                         {
-                            alert (" Warning ", " ERRORE IN FILE MENU ");
+                            alert (" Warning ", " ERROR ON MENU FILE ");
                             errorlvl = 3;
                         }
                         goto the_end;
@@ -562,7 +562,7 @@ int main (int argc, char **argv)
                     {
                         if (errorlvl != 10)
                         {
-                            alert (" Warning ", " ERRORE IN FILE MENU ");
+                            alert (" Warning ", " ERROR ON MENU FILE ");
                             errorlvl = 3;
                         }
                         goto the_end;
@@ -577,7 +577,7 @@ int main (int argc, char **argv)
                 case 4:
                     if ((infile = fopen ("qmenu.log", "r")) == NULL)
                     {
-                        printw ("Non riesco ad aprire il file.\n");
+                        printw ("I can't open the file.\n");
                         break;
                     }
                     help_item = 0;
@@ -605,13 +605,13 @@ int main (int argc, char **argv)
                     errorlvl = loadmenu (imenu[ipmenu]);
                     break;
                 case 8:
-                    win (" INFORMAZIONI ", 2, 2, 18, 78);
+                    win (" INFORMATIONS ", 2, 2, 18, 78);
                     move (4, 3);
                     printw (" %s ", VERSION);
                     move (6, 3);
                     printw (" quick menu for linux");
                     move (8, 3);
-                    printw (" Created by Stefano Teodorani");
+                    printw (" Created by Stefano Teodorani and Giovanni (Juan) Oteri");
                     move (10, 3);
                     printw (" Elenco files  : qmenu        - eseguibile");
                     move (11, 3);
@@ -644,7 +644,7 @@ int main (int argc, char **argv)
                 strncat (to_found, scelta[curitem].desc, 2);
             strcat (to_found, "\0");
             if ((junk = ext (to_found)) == 1)
-                alert (" Warning ", " MENU FILE NON PRESENTE \0");
+                alert (" Warning ", " MENU FILE NOT FOUND \0");
             dispmenu ();
             if (primavolta != 0)
                 selez (1);
@@ -688,7 +688,7 @@ int main (int argc, char **argv)
                 {
                     clear ();
                     refresh ();
-                    history_string ("[FINE LAVORO]");
+                    history_string ("[END WORK]");
                     goto the_end;
                 }
                 dispmenu ();
@@ -717,7 +717,7 @@ int main (int argc, char **argv)
                     errorlvl = loadmenu (imenu[ipmenu]);
                     if (errorlvl)
                     {
-                        alert (" Warning ", " MENU CHIAMANTE MODIFICATO ");
+                        alert (" Warning ", " PARENT MENU CHANGED ");
                         goto the_end;
                     }
                 }
@@ -742,7 +742,7 @@ int main (int argc, char **argv)
                 }
                 if ((errorlvl = loadmenu (imenu[ipmenu])))
                 {
-                    alert (" Warning ", " MENU CHIAMANTE MODIFICATO ");
+                    alert (" Warning ", " PARENT MENU CHANGED ");
                     goto the_end;
                 }
                 clear ();
@@ -785,7 +785,7 @@ int main (int argc, char **argv)
                 {
                     clear ();
                     refresh ();
-                    history_string ("[FINE LAVORO]");
+                    history_string ("[END WORK]");
                     goto the_end;
                 }
                 dispmenu ();
@@ -816,7 +816,7 @@ int main (int argc, char **argv)
                     errorlvl = loadmenu (imenu[ipmenu]);
                     if (errorlvl)
                     {
-                        alert (" Warning ", " MENU CHIAMANTE MODIFICATO ");
+                        alert (" Warning ", " PARENT MENU CHANGED ");
 
                         goto the_end;
                     }
@@ -893,7 +893,7 @@ int main (int argc, char **argv)
                 }
                 if ((errorlvl = loadmenu (imenu[ipmenu])))
                 {
-                    alert (" Warning ", " MENU CHIAMANTE MODIFICATO ");
+                    alert (" Warning ", " PARENT MENU CHANGED ");
                     goto the_end;
                 }
                 dispmenu ();
@@ -1016,10 +1016,10 @@ the_exit:;          /* Label di fine procedura            */
 void microhelp(char *message)
 {
 	printf ("\nqmenu   - %s ", VERSION);
-	printf ("quick menu - by Stefano Teodorani\n\n");
+	printf ("quick menu - by Stefano Teodorani & Giovanni Oteri\n\n");
 	printf ("usage : qmenu [-init] [-model] [menu_file]\n\n");
-	printf ("          -init : Crea il file configurazione \"qmenu.cfg\"\n");
-	printf ("          -model: Crea un modello di file menu col nome \"model.mnu\"\n\n");
+	printf ("          -init :Creating configuration file \"qmenu.cfg\"\n");
+	printf ("          -model: Creating menu file model named \"model.mnu\"\n\n");
 	printf ("%s", message);
 }
 
@@ -1235,7 +1235,7 @@ int loadmenu ()
     if (fine == 0)        /* Caricamento dei parametri Menu     */
     {
         move (0, 0);
-        printw ("File non terminato con $$");
+        printw ("File without $$");
         refresh ();
         sleep (2);
         return (3);
@@ -1247,7 +1247,7 @@ int loadmenu ()
             break;
         if (inc == memoinc)
         {
-            alert (" Warning ", " MANCA FINE FILE 1 ");
+            alert (" Warning ", " END FILE 1 MISSING ");
             return (3);
         }
     }
@@ -1255,7 +1255,7 @@ int loadmenu ()
     {
         if ((kk = getmemo (linea)) == -1)
         {
-            alert (" Warning ", " MANCA FILE FILE 2, VERIFICARE VOCI MENU ");
+            alert (" Warning ", "END FILE 2 MISSING, VERIFICARE VOCI MENU ");
             return (3);
         }
         if ((linea[0] == '%') && (linea[1] == '%'))
