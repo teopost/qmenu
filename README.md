@@ -1,14 +1,14 @@
-![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
-
 # How compile on Ubuntu
 
-
- Install ncurses library
+You shoud compile qmenu with gcc.
+On ubuntu you should install ncurses library
 
     sudo apt-get install libncurses5-dev libncursesw5-dev
     sh ./go
     chmod 777 ./qmenu
     ./qmenu m_main.mnu
+    
+![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
 # How it works
 qmenu allows to create menus for interfaces and characters in an easy and intuitive way.
