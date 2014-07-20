@@ -1,16 +1,14 @@
-# How it works:
-how it works:
-qmenu allows to create menus for interfaces and characters in an easy and intuitive way.
-Each menu in defined in a file (with extenision .mnu) that contains  the visual appearance and the definition of the items.
-The file is divided oi three sections
+# Come funziona
+qmenu permette di creare in maniera semplice e intuitiva menu per interfacce a caratteri.
+Ogni menu è definito in un file (con estensione .mnu) che contiene sia l'aspetto visuale che la definizione delle varie voci.
+
+Il file è suddiviso in 3 sezioni:
 
     1. Screen Area
     2. Item Area
     3. Option Area
 
-Each area is delimited by the characters $$ and %%
-
-
+Ogni area è delimitata dai caratteri $$ e %%
 
     Screen area
     $$
@@ -19,71 +17,70 @@ Each area is delimited by the characters $$ and %%
     Option area
 
 ## Screen area
-this area starts from the beginning of the file to the symbol $$, and contains the "drawing" of the  menu in text format.
-Each menu option, to be recognized as selectable must be enclosed between the symbol ^
+Questa area va da inizio file fino al simbolo $$, e contiene il "disegno" vero e proprio del menu in formato testuale.
+Ogni opzione di menu, per essere riconosciuta come selezionabile deve essere racchiuso fra il simbolo ^
 
-Example:
+Esempio:
 
     ^1. Option 1^
     ^2. Option 2^
 
-The options can be selected by using the arrow keys or by pressing the first character of the string.
+Le opzioni si possono selezionare con la freccia della tastiera ma anche premendo la prima lettera della stringa
 
-In this area you can also add some variables with the following sintax:
+All'interno di questa area si possono anche aggiungere alcune variabili con la sintassi:
 
-    x[NAME_VARIABILE]
+    x[NOME_VARIABILE]
 
+In pratica il nome della variabile è composto da un prefisso (x) e, fra parentesi quadre il nome della variabile. Questi sono i valori disponibili:
 
-The name of the variable is composed by a prefix (x) and, the name between square brackets. These are the available values:
+    * c - Centrato
+    * l - Giustificato a sinistra
+    * r - Giustificato a destra
 
-    * c - Centered
-    * l - Left-justified
-    * r - Right-justified
+Nota: Se il simbolo viene messo maiuscolo il valore viene mostrato in reverse
 
-Note: If the symbol is put capitalize the value is shown in reverse
+Le variabili possono assumere il seguente valore:
 
-Variables can take the following value:
+    * TIME - Orario attuale
+    * MENUNAME - Nome del menu
+    * INFOTERM - Nome rel terminale
+    * MNUTRACE - Percorso dei menu
 
-    * TIME - Current time
-    * MENUNAME - Name of the menu
-    * INFOTERM - Nome of the terminal
-    * MNUTRACE - Path menu
+Variabili speciali:
 
-Special variables:
+    & - Posizione del cursore
+    ${PATH} - Visualizza il contenuto della variabile d'ambiente PATH
 
-    & - Cursor position
-    ${PATH} - Displays the contents of the environment variable PATH
+Esempio:
 
-Example:
-
-	C[TITLE] - Menu title centered and in reverse
+	C[TITLE] - Titolo del menu centrato ed in reverse
 	
 ## Item area
-In this section, for each menu item, you define:
+In questa sezione, per ogni item di menu, si definisce:
 
-* the action to perform
-* An help message
+* l'azione da effettuare
+* Un eventuale messaggio di Help
 * ???
 
-The format to use for each item is composed by 4 lines:
+Il formato da utilizzare per ogni item è composta da 4 righe:
 
-    1. Menu option
-    2. Command to perform
-    3. Help message
+    1. Opzione di menu
+    2. Comando da eseguire
+    3. Messaggio di help da visualizzare
     4. ???
 
 
-1. In the first line, insert the first character of the string which contains the menu option
-2. In the second line, is possible to specify:
+1. Nella prima riga inserire il primo carattere della stringa che contiene l'ozione di menu)
+2. Nella seconda riga, è possibile specificare:
 
-    * A shell command
-    * A submenu to open ($menuname without extension)
-    * Reserved command (return to go to the previous menu, end to quit menu) 
+    * Un comando di shell
+    * Un sottomenu da aprire ($menuname without extension)
+    * Comando riservato (return per tornare al menu precedente, fine per uscire dal menu) 
 
-3. In the third line you specify the message.
-This message will be shown at the variable TITLE present in the "Screen area"
+3. Nella terza riga specificare il messaggio di testo.
+Tale messaggio verrà mostrato in corrispondenza della variabile TITLE presente nella "Screen area"
 
-Example:
+Esempio:
 
     %1
     ls -lisa; pause
@@ -92,19 +89,18 @@ Example:
 
 
 ## Option area
-This section contains a series of generic settings:
+Questa sezione contiene una sezie di impostazioni generiche:
 
-    TITOLO - Menu title
-    RVS_ROW=0,22 - Lines displayed in reverse. In this case the line 0 and line 22
-    NOKEYDISP - Disables the automatic visualization of the labels of the function keys (ET[1-10])
-    ET[1-10] - Text shown to function key n if NOKEYDISP commented
-    FZ[1-10] - Command (shell) for the function key n
-    PW[1-10] - Password to set for the function key n
-    SHELL=sh - Pressing shift-f1 starts a shell session
-    EDITOR=vi - Pressing shift-f2 starts vi with the current menu
+    TITOLO - Titolo del menu
+    RVS_ROW=0,22 - Righe da mostrare in reverse. In questo caso la riga 0 e la riga 22
+    NOKEYDISP - Disabilita la visualizzazione automatica delle label dei tasti funzione (ET[1-10])
+    ET[1-10] - Testo mostrato per tasto funzione n se NOKEYDISP commentato
+    FZ[1-10] - Comando (shell) eseguito per il tastofunzione n
+    PW[1-10] - Password da impostare per tasto funzione n
+    SHELL=sh - Premendo shift-f1 viene avviata una sessione di shell con questa
+    EDITOR=vi - Premente shift-f2 viene avviato il vi con l'editing del menu attualmente in uso
     
-Each of these options can be commented out with #
-
+Ognuna di queste opzioni può essere commentata con il #
 
 
 
