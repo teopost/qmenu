@@ -1,5 +1,4 @@
-# How compile on Ubuntu
-
+# How install on Ubuntu
 You shoud compile qmenu with gcc.
 On ubuntu you should install ncurses library
 
