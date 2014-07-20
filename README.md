@@ -11,7 +11,7 @@ On ubuntu you should install ncurses library
 
 # How it works
 qmenu allows to create menus for interfaces and characters in an easy and intuitive way.
-Each menu in defined in a file (with extenision .mnu) that contains  the visual appearance and the definition of the items.
+Each menu is defined in a file (with extenision .mnu) that contains the visual appearance and the definition of the items.
 The file is divided oi three sections
 
     1. Screen Area
@@ -20,8 +20,6 @@ The file is divided oi three sections
 
 Each area is delimited by the characters $$ and %%
 
-
-
     Screen area
     $$
     Item area
@@ -29,8 +27,8 @@ Each area is delimited by the characters $$ and %%
     Option area
 
 ## Screen area
-This area starts from the beginning of the file to the symbol $$, and contains the "drawing" of the  menu in text format.
-Each menu option, to be recognized as selectable must be enclosed between the symbol ^
+This area starts from the beginning of the file to the symbol $$, and contains the "drawing" of the menu in text format.
+Each menu option, to be recognized as selectable, must be enclosed between the symbol ^
 
 Example:
 
@@ -38,13 +36,11 @@ Example:
     ^2. Option 2^
 
 The options can be selected by using the arrow keys or by pressing the first character of the string.
-
-In this area you can also add some variables with the following sintax:
+In this area you can also add some variables with the following syntax:
 
     x[NAME_VARIABILE]
 
-
-The name of the variable is composed by a prefix (x) and, the name between square brackets. These are the available values:
+The name of the variable is composed by a prefix (x) and the name between square brackets. These are the available values:
 
     * c - Centered
     * l - Left-justified
@@ -71,16 +67,15 @@ Example:
 ## Item area
 In this section, for each menu item, you define:
 
-* the action to perform
+* The action to perform
 * An help message
-* ???
+* An empty row
 
 The format to use for each item is composed by 4 lines:
 
     1. Menu option
     2. Command to perform
     3. Help message
-    4. ???
 
 
 1. In the first line, insert the first character of the string which contains the menu option
@@ -98,7 +93,6 @@ Example:
     %1
     ls -lisa; pause
     This item show shell file list
-    ?????
 
 
 ## Option area
@@ -114,7 +108,6 @@ This section contains a series of generic settings:
     EDITOR=vi - Pressing shift-f2 starts vi with the current menu
     
 Each of these options can be commented out with #
-
 
 # Note
 Documentation in italian language is available here
