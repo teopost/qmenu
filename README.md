@@ -1,7 +1,7 @@
 ![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
-How compile on Ubuntu
----
+# How compile on Ubuntu
+
 
  Install ncurses library
 
@@ -10,8 +10,7 @@ How compile on Ubuntu
     chmod 777 ./qmenu
     ./qmenu m_main.mnu
 
-# How it works:
-how it works:
+# How it works
 qmenu allows to create menus for interfaces and characters in an easy and intuitive way.
 Each menu in defined in a file (with extenision .mnu) that contains  the visual appearance and the definition of the items.
 The file is divided oi three sections
@@ -31,7 +30,7 @@ Each area is delimited by the characters $$ and %%
     Option area
 
 ## Screen area
-this area starts from the beginning of the file to the symbol $$, and contains the "drawing" of the  menu in text format.
+This area starts from the beginning of the file to the symbol $$, and contains the "drawing" of the  menu in text format.
 Each menu option, to be recognized as selectable must be enclosed between the symbol ^
 
 Example:
@@ -118,13 +117,15 @@ This section contains a series of generic settings:
 Each of these options can be commented out with #
 
 
-Documentation in italian
----
-[README_it](README_it.md)
+# Note
+Documentation in italian language is available here
+
+* [README_it](README_it.md)
 
 Thanks
 ---
-First version named appsel created by  [Giovanni Juan Oteri](https://twitter.com/giovannioteri)
+* First version named appsel created by  [Giovanni Juan Oteri](https://twitter.com/giovannioteri)
+* English translation of [Lorenzo Teodorani](https://github.com/teopost2)
 
 
 
