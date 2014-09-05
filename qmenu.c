@@ -1,4 +1,28 @@
 /*
+
+'******************************************************************************
+' This file is part of qmenu.c
+'
+' Copyright © 2014 Stefano Teodorani
+' Authors: Stefano "teopost" Teodorani <s.teodorani@gmail.com>
+'
+' This program IS free software; you can redistribute it AND / OR modify
+' it under the terms OF the GNU General PUBLIC License AS published by
+' the Free Software Foundation; version 3 OF the License.
+'  
+' This program IS distributed IN the hope that it will be useful,
+' but WITHOUT ANY WARRANTY; without even the implied warranty OF
+' MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.See the
+' GNU General PUBLIC License FOR more details.
+' 
+' You should have received a COPY OF the GNU General PUBLIC License
+' 
+' along WITH this program; IF NOT, WRITE TO the Free Software
+' Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110 - 1301, USA.
+'
+'******************************************************************************
+
+
 ================================================================================
 qmenu.c - quick menu
 --------------------------------------------------------------------------------
@@ -1018,7 +1042,7 @@ void microhelp(char *message)
 	printf ("\nqmenu   - %s ", VERSION);
 	printf ("quick menu - by Stefano Teodorani & Giovanni Oteri\n\n");
 	printf ("usage : qmenu [-init] [-model] [menu_file]\n\n");
-	printf ("          -init :Creating configuration file \"qmenu.cfg\"\n");
+	printf ("          -init : Creating configuration file \"qmenu.cfg\"\n");
 	printf ("          -model: Creating menu file model named \"model.mnu\"\n\n");
 	printf ("%s", message);
 }

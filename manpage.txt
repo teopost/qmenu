@@ -1,0 +1,8 @@
+NAME
+    qmenu  - tool for creating simple menu in linux environments
+SYNOPSIS
+    qmenu m_main.mnu
+DESCRIPTION
+    qmenu allows to create menus for interfaces and characters in an easy and intuitive way. Each menu is defined in a file (with extenision .mnu) that contains the visual appearance and the definition of the items. 
+AUTHOR
+   Stefano Teodorani <s.teodorani@gmail.com>
