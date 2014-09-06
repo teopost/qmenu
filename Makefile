@@ -16,12 +16,10 @@ DATAROOTDIR = $(PREFIX)/share
 DATADIR = $(DATAROOTDIR)/$(TARGET)
 MANDIR = $(DATAROOTDIR)/man/man1
 
-#all: build
-
 build:
 	$(CC) $(CFLAGS) $(LIBS) -o $(TARGET) $(TARGET).c
 
-install: build
+install:
 	install -d -m 0755 $(DATADIR)
 	install -d -m 0755 $(MANDIR)
 	install -m 0755 $(TARGET) $(BINDIR)
@@ -31,4 +29,4 @@ install: build
 clean:
 	$(RM) $(TARGET)
 
-.PHONY: install clean
+.PHONY: build install clean
