@@ -4,8 +4,7 @@ Priority: optional
 Maintainer: Andrea Colangelo <warp10@debian.org>
 Uploaders: Stefano Teodorani <s.teodorani@gmail.com>
 Build-Depends: debhelper (>= 9),
-               libncurses5-dev,
-               libncurses5w-dev
+               libncurses5-dev
 Standards-Version: 3.9.5
 Homepage: https://github.com/teopost/qmenu/
 Vcs-Git: https://github.com/teopost/qmenu.git

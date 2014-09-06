@@ -9,5 +9,5 @@
 	dh $@
 
 override_dh_auto_install:
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/qmenu
+	$(MAKE) install PREFIX=$(CURDIR)/debian/qmenu
 
