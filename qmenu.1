@@ -1,25 +1,27 @@
-.TH QMENU "1" "September 2014"
+.TH QMENU "1" "6 September 2014"
 .SH NAME
-qmenu \- creates textual menus.
+qmenu \- A tool to create simple menus for terminal interfaces
 .SH SYNOPSIS
-.B qmenu [\fIOPTION\fR] [menu_file]
+.B qmenu [\fIOPTION\fR] [menu_filename]
 .SH DESCRIPTION
-.\" Add any additional description here
 .PP
 qmenu creates textual menus in an easy and intuitive way.
 .TP
+.PP
+.SH OPTIONS
+.PP
 \fB\-init\fR
-creating configuration file "qmenu.cfg"
+create the configuration file "qmenu.cfg"
 .TP
 \fB\-model\fR
-creating menu file model named "model.mnu"
+create a menu file model "model.mnu"
 .TP
-\fBmenu_file\fR
-file (with .mnu extension) that contains the visual appearance and the definition of the items
+\fBmenu_filename\fR
+file (with .mnu extension) containing the menu's outline
 
 .PP
 .SH SYNOPSYS
-qmenu allows to create menus for interfaces and characters in an easy and intuitive way\. Each menu is defined in a file (with extension \.mnu) that contains the visual appearance and the definition of the items\. The file is divided on three sections:
+qmenu allows you to create menus for textual interfaces in an easy and intuitive way\. Each menu is defined in a file (with extension \.mnu) containing the menu's outline. The file is composed by three sections:
 .
 .IP "" 4
 .
@@ -34,7 +36,7 @@ qmenu allows to create menus for interfaces and characters in an easy and intuit
 .IP "" 0
 .
 .P
-Each area is delimited by the characters $$ and %%
+Sections are delimited by the characters $$ and %%, respectively:
 .
 .IP "" 4
 .
@@ -51,7 +53,7 @@ Option area
 .IP "" 0
 .
 .SH "Screen area"
-This area starts from the beginning of the file to the symbol $$, and contains the "drawing" of the menu in text format\. Each menu option, to be recognized as selectable, must be enclosed between the symbol ^
+This area spans from the beginning of the file to the symbol $$, and contains the "drawing" of the menu in text format\. To make menu options selectable, they must be included between two symbols ^
 .
 .P
 Example:
@@ -68,7 +70,7 @@ Example:
 .IP "" 0
 .
 .P
-The options can be selected by using the arrow keys or by pressing the first character of the string\. In this area you can also add some variables with the following syntax:
+The options can be highlighted with arrow keys or by pressing the first character of the string\. In this area you can also add some variables according to the following syntax:
 .
 .IP "" 4
 .
@@ -81,7 +83,7 @@ x[NAME_VARIABILE]
 .IP "" 0
 .
 .P
-The name of the variable is composed by a prefix (x) and the name between square brackets\. These are the available values:
+The name of the variable is made up by a prefix (x) and a name between square brackets\. The possibile values are:
 .
 .IP "" 4
 .
@@ -96,18 +98,18 @@ The name of the variable is composed by a prefix (x) and the name between square
 .IP "" 0
 .
 .P
-Note: If the symbol is put capitalize the value is shown in reverse
+Note: If the symbol is capitalized, the value is shown in reverse
 .
 .P
-Variables can take the following value:
+Variables can assume the following values:
 .
 .IP "" 4
 .
 .nf
 
 * TIME \- Current time
-* MENUNAME \- Name of the menu
-* INFOTERM \- Nome of the terminal
+* MENUNAME \- Menu's name
+* INFOTERM \- Terminal's name
 * MNUTRACE \- Path menu
 .
 .fi
@@ -142,7 +144,7 @@ C[TITLE] \- Menu title centered and in reverse
 .IP "" 0
 .
 .SH "Item area"
-In this section, for each menu item, you define:
+In this section, for each menu item you can define:
 .
 .IP "\(bu" 4
 The action to perform
@@ -156,7 +158,7 @@ An empty row
 .IP "" 0
 .
 .P
-The format to use for each item is composed by 4 lines:
+Each item is made up by 3 lines:
 .
 .IP "" 4
 .
@@ -171,10 +173,10 @@ The format to use for each item is composed by 4 lines:
 .IP "" 0
 .
 .IP "1." 4
-In the first line, insert the first character of the string which contains the menu option
+In the first line, insert the first character of the string containing the menu option
 .
 .IP "2." 4
-In the second line, is possible to specify:
+In the second line you can specify:
 .
 .IP "\(bu" 4
 A shell command
@@ -183,13 +185,13 @@ A shell command
 A submenu to open ($menuname without extension)
 .
 .IP "\(bu" 4
-Reserved command (return to go to the previous menu, end to quit menu)
+A reserved command (return to go to the previous menu, end to quit menu)
 .
 .IP "" 0
 
 .
 .IP "3." 4
-In the third line you specify the message\. This message will be shown at the variable TITLE present in the "Screen area"
+In the third line you can specify a message\. This message will replace the variable TITLE in the "Screen area"
 .
 .IP "" 0
 .
@@ -202,7 +204,7 @@ Example:
 
 %1
 ls \-lisa; pause
-This item show shell file list
+This item shows shell file list
 .
 .fi
 .
@@ -216,7 +218,7 @@ This section contains a series of generic settings:
 .nf
 
 TITOLO \- Menu title
-RVS_ROW=0,22 \- Lines displayed in reverse\. In this case the line 0 and line 22
+RVS_ROW=0,22 \- Lines displayed in reverse\. In this case the lines 0 22
 NOKEYDISP \- Disables automatic visualization of function keys labels (ET[1\-10])
 ET[1\-10] \- Text shown to function key n if NOKEYDISP commented
 FZ[1\-10] \- Command (shell) for the function key n
@@ -228,7 +230,7 @@ EDITOR=vi \- Pressing shift\-f2 starts vi with the current menu
 .
 .IP "" 0
 .
-.SH AUTHOR
+.SH AUTHORS
 Written by Stefano Teodorani - \fIhttps://github\.com/teopost\fR.
 .br
 Translated by Lorenzo Teodorani - \fIhttps://github\.com/teopost2\fR.
@@ -237,16 +239,15 @@ Thanks to Giovanni Juan Oteri - \fIhttps://twitter\.com/giovannioteri\fR
 .br
 
 .SH "REPORTING BUGS"
-Report qmenu bugs to <https://github.com/teopost/qmenu/issues>
+Please, report bugs to <https://github.com/teopost/qmenu/issues>
 .br
 General help using software: <https://github.com/teopost/qmenu>
 .br
 Report qmenu translation bugs to <https://github.com/teopost/qmenu/issues>
 .SH COPYRIGHT
-Copyright \(co 2013 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
-.br
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-.SH "SEE ALSO"
-dialog
+.\"So, the FSF wrote qmenu? :)
+Copyright \(co 2013 Free Software Foundation, Inc
+.PP
+qmenu is free software: you are free to modify and/or redistribute it under the terms of the GNU General Public License version 3, or any later version. You should have received a copy of the GNU General Public License along with the source for qmenu, see the file COPYING. If now, you can find it at <http://gnu.org/licenses/gpl.html>.
+.PP
+qmenu is distributeded in the hope that it will be useful, but WITHOUT ANY WARRANTY, without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
