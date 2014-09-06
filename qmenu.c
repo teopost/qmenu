@@ -3,7 +3,7 @@
 '******************************************************************************
 ' This file is part of qmenu.c
 '
-' Copyright © 2014 Stefano Teodorani
+' Copyright © 1992 - 2014 Stefano Teodorani
 ' Authors: Stefano "teopost" Teodorani <s.teodorani@gmail.com>
 '
 ' This program IS free software; you can redistribute it AND / OR modify
