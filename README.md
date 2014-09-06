@@ -4,8 +4,8 @@ On ubuntu you should install ncurses library
 
     sudo apt-get install libncurses5-dev libncursesw5-dev
     make
-    chmod 755 ./qmenu
-    ./qmenu m_main.mnu
+    sudo make install
+    qmenu m_main.mnu
     
 ![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
