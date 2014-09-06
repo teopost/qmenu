@@ -20,9 +20,10 @@ build:
 	$(CC) $(CFLAGS) $(LIBS) -o $(TARGET) $(TARGET).c
 
 install:
+	install -d -m 0755 $(BINDIR)
 	install -d -m 0755 $(DATADIR)
 	install -d -m 0755 $(MANDIR)
-	install -m 0755 $(TARGET) $(BINDIR)
+	install -m 0755 $(TARGET) $(BINDIR)/
 	install -m 0644 *.mnu $(DATADIR)
 	install -m 0644 $(TARGET).1  $(MANDIR)
 
