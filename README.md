@@ -3,7 +3,7 @@ You shoud compile qmenu with gcc.
 On ubuntu you should install ncurses library
 
     sudo apt-get install libncurses5-dev libncursesw5-dev
-    sh ./go
+    make
     chmod 755 ./qmenu
     ./qmenu m_main.mnu
     
