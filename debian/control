@@ -1,4 +1,4 @@
-Source: qname
+Source: qmenu
 Section: utils
 Priority: optional
 Maintainer: Andrea Colangelo <warp10@debian.org>
@@ -10,7 +10,7 @@ Homepage: https://github.com/teopost/qmenu/
 Vcs-Git: https://github.com/teopost/qmenu.git
 Vcs-Browser: https://github.com/teopost/qmenu
 
-Package: qname
+Package: qmenu
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Tool to create simple menus for terminal interfaces
