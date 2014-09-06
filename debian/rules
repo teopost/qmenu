@@ -8,5 +8,8 @@
 %:
 	dh $@
 
+override_dh_auto_build:
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -lncurses -o qmenu qmenu.c
+
 override_dh_auto_install:
 	$(MAKE) install PREFIX=$(CURDIR)/debian/qmenu/usr
