@@ -1,0 +1,3 @@
+version=3
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/qmenu-$1\.tar\.gz/ \
+https://github.com/teopost/qmenu/tags .*/v?(\d\S*)\.tar\.gz
