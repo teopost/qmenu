@@ -17,7 +17,7 @@ DATADIR = $(DATAROOTDIR)/$(TARGET)
 MANDIR = $(DATAROOTDIR)/man/man1
 
 build:
-	$(CC) $(CFLAGS) $(LIBS) -o $(TARGET) $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c $(LIBS)
 
 install:
 	install -d -m 0755 $(BINDIR)
