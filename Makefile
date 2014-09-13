@@ -4,6 +4,10 @@
 # This file is free software, and is released under the terms of the WTFPL, as
 # described here: http://www.wtfpl.net/txt/copying/
 
+SHELL = /bin/bash
+
+RELEASE = 5.0.1
+
 CC = gcc
 CFLAGS = -g -Wall
 LIBS = -lncurses
@@ -29,5 +33,15 @@ install:
 
 clean:
 	$(RM) $(TARGET)
+	$(RM) -rf .release-tmp
 
-.PHONY: build install clean
+release: clean
+	mkdir -p .release-tmp/$(TARGET)-$(RELEASE)/
+	cp -rv * .release-tmp/$(TARGET)-$(RELEASE)
+	rm -rf .release-tmp/$(TARGET)-$(RELEASE)/debian
+	rm -f .release-tmp/$(TARGET)-$(RELEASE)/qmenu.{cfg,frm,gif,hlp}
+	rm -f .release-tmp/$(TARGET)-$(RELEASE)/README_it.md
+	tar cf $(TARGET)-$(RELEASE).tar.gz -C .release-tmp $(TARGET)-$(RELEASE)
+	rm -rf .release-tmp
+
+.PHONY: build install clean release
