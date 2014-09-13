@@ -629,7 +629,7 @@ int main (int argc, char **argv)
                     errorlvl = loadmenu (imenu[ipmenu]);
                     break;
                 case 8:
-                    win (" INFORMATIONS ", 2, 2, 18, 78);
+                    win (" INFORMATION ", 2, 2, 18, 78);
                     move (4, 3);
                     printw (" %s ", VERSION);
                     move (6, 3);
