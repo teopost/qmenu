@@ -41,7 +41,7 @@ release: clean
 	rm -rf .release-tmp/$(TARGET)-$(RELEASE)/debian
 	rm -f .release-tmp/$(TARGET)-$(RELEASE)/qmenu.{cfg,frm,gif,hlp}
 	rm -f .release-tmp/$(TARGET)-$(RELEASE)/README_it.md
-	tar cf $(TARGET)-$(RELEASE).tar.gz -C .release-tmp $(TARGET)-$(RELEASE)
+	tar czf $(TARGET)-$(RELEASE).tar.gz -C .release-tmp $(TARGET)-$(RELEASE)
 	rm -rf .release-tmp
 
 .PHONY: build install clean release
