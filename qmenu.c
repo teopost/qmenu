@@ -48,7 +48,7 @@ Compilazione su Linux        -> gcc x -lncurses -o qmenu qmenu.c
 
 // Varius constants
 
-#define VERSION "Rel. 5.0.1, 07/02/2014"    	// Versione del programma             				
+#define VERSION "Rel. 5.0.2, 16/09/2014"                         	// Versione del programma             				
 #define SUPER   1       						// Pop-up  Stampanti Superutente      				
 #define USER    2       						// Pop-up  Stampanti Utente           				
 #define ON      1       						// Costante stato ON                  				

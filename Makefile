@@ -6,7 +6,7 @@
 
 SHELL = /bin/bash
 
-RELEASE = 5.0.1
+RELEASE = 5.0.2
 
 CC = gcc
 CFLAGS = -g -Wall
