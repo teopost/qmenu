@@ -5,7 +5,7 @@ Maintainer: Andrea Colangelo <warp10@debian.org>
 Uploaders: Stefano Teodorani <s.teodorani@gmail.com>
 Build-Depends: debhelper (>= 9),
                libncurses5-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: https://github.com/teopost/qmenu/
 Vcs-Git: https://github.com/teopost/qmenu.git
 Vcs-Browser: https://github.com/teopost/qmenu
