@@ -5,7 +5,7 @@ Maintainer: Andrea Colangelo <warp10@debian.org>
 Uploaders: Stefano Teodorani <s.teodorani@gmail.com>
 Build-Depends: debhelper (>= 9),
                libncurses5-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: https://github.com/teopost/qmenu/
 Vcs-Git: https://github.com/teopost/qmenu.git
 Vcs-Browser: https://github.com/teopost/qmenu
@@ -14,7 +14,10 @@ Package: qmenu
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Tool to create simple menus for terminal interfaces
- qmenu allows you to create menus for textual interfaces in an easy and
- intuitive way\. Each menu is defined in a file according to a simple syntax.
+ qmenu allows one to create menus for textual interfaces in an easy and
+ intuitive way. Each menu is defined in a file describing the
+ visual appearance and the menu items using a simple syntax.
  .
- ADD SOME MORE DETAILS HERE
+ Features include options to format the menu, bindings to function keys,
+ possibility to include submenus, show help messages and launch shell
+ sessions.
