@@ -1,5 +1,5 @@
-qmenu (5.0.2-1) UNRELEASED; urgency=low
+qmenu (5.0.2-1) unstable; urgency=low
 
   * Initial release (Closes: #761351)
 
- -- Andrea Colangelo <warp10@debian.org>  Sat, 06 Sep 2014 20:17:53 +0200
+ -- Andrea Colangelo <warp10@debian.org>  Wed, 24 Sep 2014 21:41:07 +0200
