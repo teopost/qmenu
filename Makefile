@@ -17,7 +17,7 @@ TARGET = qmenu
 PREFIX = /usr/local
 BINDIR= $(PREFIX)/bin
 DATAROOTDIR = $(PREFIX)/share
-DATADIR = $(DATAROOTDIR)/$(TARGET)
+EXAMPLESDIR = $(DATAROOTDIR)/doc/$(TARGET)/examples
 MANDIR = $(DATAROOTDIR)/man/man1
 
 build:
@@ -28,7 +28,7 @@ install:
 	install -d -m 0755 $(DATADIR)
 	install -d -m 0755 $(MANDIR)
 	install -m 0755 $(TARGET) $(BINDIR)/
-	install -m 0644 *.mnu $(DATADIR)
+	install -m 0644 *.mnu $(EXAMPLESDIR)
 	install -m 0644 $(TARGET).1  $(MANDIR)
 
 clean:
