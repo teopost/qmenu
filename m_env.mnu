@@ -28,7 +28,7 @@ $submenu
 A menu called sumenu.mnu will be open
 
 %2
-ls -lisa; pause
+ls -lisa; read x
 This item show shell file list
 
 %3

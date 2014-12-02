@@ -83,7 +83,7 @@ Tale messaggio verrà mostrato in corrispondenza della variabile TITLE presente 
 Esempio:
 
     %1
-    ls -lisa; pause
+    ls -lisa; read x
     This item show shell file list
     ?????
 

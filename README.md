@@ -91,7 +91,7 @@ This message will be shown at the variable TITLE present in the "Screen area"
 Example:
 
     %1
-    ls -lisa; pause
+    ls -lisa; read x
     This item show shell file list
 
 
