@@ -9,14 +9,14 @@
 ' This program IS free software; you can redistribute it AND / OR modify
 ' it under the terms OF the GNU General PUBLIC License AS published by
 ' the Free Software Foundation; version 3 OF the License.
-'  
+'
 ' This program IS distributed IN the hope that it will be useful,
 ' but WITHOUT ANY WARRANTY; without even the implied warranty OF
 ' MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.See the
 ' GNU General PUBLIC License FOR more details.
-' 
+'
 ' You should have received a COPY OF the GNU General PUBLIC License
-' 
+'
 ' along WITH this program; IF NOT, WRITE TO the Free Software
 ' Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110 - 1301, USA.
 '
@@ -48,180 +48,189 @@ Compilazione su Linux        -> gcc x -lncurses -o qmenu qmenu.c
 
 // Varius constants
 
-#define VERSION "Rel. 5.0.2, 16/09/2014"                         	// Versione del programma             				
-#define SUPER   1       						// Pop-up  Stampanti Superutente      				
-#define USER    2       						// Pop-up  Stampanti Utente           				
-#define ON      1       						// Costante stato ON                  				
-#define OFF     0       						// Costante stato OFF                 				
-#define MENU   -1       						// Check Password da voce Menu        				
-#define EDIT   -2       						// Check Password da <Shift-@>        				
-#define SHELL  -3       						// Check Password da <Shift-!>        				
-#define SUPER_MENU  -4      					// Check Password da <Shift-#>        				
-#define PASSWD_MODE -5      					// Check Password in password mode    				
-#define TL      1       						// Flag simbolo grafico Top-Left      				
-#define BL      2       						// Flag simbolo grafico Bottom-Left   				
-#define TR      3       						// Flag simbolo grafico Top-Right     				
-#define BR      4       						// Flag simbolo grafico Bottom-Right  				
-#define ROW     5       						// Flag simbolo grafico Row           				
-#define COL     6       						// Flag simbolo grafico Col           				
-#define SHADOW  7       						// Flag simbolo grafico Shadow        				
-#define LEFT_SYMBOL  '>'    					// Simbolo Sx della barra di selezione 				
-#define RIGHT_SYMBOL ' '    					// Simbolo Dx della barra di selezione 				
-#define LOGFILE_DIM  50000  					// Dimensione max del file di LOG     				
-#define CONFIG_FILE qmenu.cfg   				// Nome File di configurazione        				
-#define MAXR 24         						// Numero massimo righe Display       				
-#define MAXC 90         						// Numero massimo colonne Display     				
-#define MAXITEMS 40     						// Massimo Numero Voci di menu        				
-#define MAXFRMITEMS 20      					// Massimo Numero Voci di menu        				
-#define PREV_FIELD "-2"     					// Massimo Numero Voci di menu        				
-#define ABORT "-1"      						// Massimo Numero Voci di menu        				
-#define C_U 256         						// Cursore Su                         				
-#define C_D 257         						// Cursore Giu'                       				
-#define C_L 258         						// Cursore Sinistra                   				
-#define C_R 259         						// Cursore Destra                     				
-#define FZ1 261         						// Tasto Funzione F1                  				
-#define FZ2 262         						// Tasto Funzione F2                  				
-#define FZ3 263         						// Tasto Funzione F3                  				
-#define FZ4 264         						// Tasto Funzione F4                  				
-#define FZ5 265         						// Tasto Funzione F5                  				
-#define FZ6 266         						// Tasto Funzione F6                  				
-#define FZ7 267         						// Tasto Funzione F7                  				
-#define FZ8 268         						// Tasto Funzione F8                  				
-#define FZ9 269         						// Tasto Funzione F9                  				
-#define FZ0 270         						// Tasto Funzione F10                 				
-#define FZA 271         						// Tasto Funzione F11                 				
-#define FZB 272         						// Tasto Funzione F12                 				
-#define DEL 18          						// Tasto DELETE                       				
-#define BKSP 8          						// Tasto BACK-SPACE                   				
-#define INS 5           						// Tasto INSERT                       				
-#define RET 13          						// Tasto RETURN                       				
-#define NL 10           						// Tasto NEW-LINE                     				
-#define PGUP 300        						// Tasto Pagina Su'                   				
-#define PGDN 301        						// Tasto Pagina Giu'                  				
-#define HOME 302        						// Tasto Pagina Giu'                  				
-#define END  303        						// Tasto Pagina Giu'                  				
-#define ESC 27          						// Tasto ESCAPE                       				
-#define X_COORD 3       						// Coord. X Display Help              				
-#define Y_COORD 5       						// Coord. Y Display Help              				
-#define MAX_ROW 16      						// Righe Max Display Help             				
-#define MAX_COL 70      						// Colonne Max Display Help           				
+#define VERSION "Rel. 5.0.3"
+#define SUPER   1       						// Pop-up  Stampanti Superutente
+#define USER    2       						// Pop-up  Stampanti Utente
+#define ON      1       						// Costante stato ON
+#define OFF     0       						// Costante stato OFF
+#define MENU   -1       						// Check Password da voce Menu
+#define EDIT   -2       						// Check Password da <Shift-@>
+#define SHELL  -3       						// Check Password da <Shift-!>
+#define SUPER_MENU  -4      				// Check Password da <Shift-#>
+#define PASSWD_MODE -5      				// Check Password in password mode
+#define TL      1       						// Flag simbolo grafico Top-Left
+#define BL      2       						// Flag simbolo grafico Bottom-Left
+#define TR      3       						// Flag simbolo grafico Top-Right
+#define BR      4       						// Flag simbolo grafico Bottom-Right
+#define ROW     5       						// Flag simbolo grafico Row
+#define COL     6       						// Flag simbolo grafico Col
+#define SHADOW  7       						// Flag simbolo grafico Shadow
+#define LEFT_SYMBOL  '>'    				// Simbolo Sx della barra di selezione
+#define RIGHT_SYMBOL ' '    				// Simbolo Dx della barra di selezione
+#define LOGFILE_DIM  50000  				// Dimensione max del file di LOG
+#define CONFIG_FILE qmenu.cfg   		// Nome File di configurazione
+#define MAXR 24         						// Numero massimo righe Display
+#define MAXC 90         						// Numero massimo colonne Display
+#define MAXITEMS 40     						// Massimo Numero Voci di menu
+#define MAXFRMITEMS 20      				// Massimo Numero Voci di menu
+#define PREV_FIELD "-2"     				// Massimo Numero Voci di menu
+#define ABORT "-1"      						// Massimo Numero Voci di menu
+#define C_U 256         						// Cursore Su
+#define C_D 257         						// Cursore Giu'
+#define C_L 258         						// Cursore Sinistra
+#define C_R 259         						// Cursore Destra
+#define FZ1 261         						// Tasto Funzione F1
+#define FZ2 262         						// Tasto Funzione F2
+#define FZ3 263         						// Tasto Funzione F3
+#define FZ4 264         						// Tasto Funzione F4
+#define FZ5 265         						// Tasto Funzione F5
+#define FZ6 266         						// Tasto Funzione F6
+#define FZ7 267         						// Tasto Funzione F7
+#define FZ8 268         						// Tasto Funzione F8
+#define FZ9 269         						// Tasto Funzione F9
+#define FZ0 270         						// Tasto Funzione F10
+#define FZA 271         						// Tasto Funzione F11
+#define FZB 272         						// Tasto Funzione F12
+#define DEL 18          						// Tasto DELETE
+#define BKSP 8          						// Tasto BACK-SPACE
+#define INS 5           						// Tasto INSERT
+#define RET 13          						// Tasto RETURN
+#define NL 10           						// Tasto NEW-LINE
+#define PGUP 300        						// Tasto Pagina Su'
+#define PGDN 301        						// Tasto Pagina Giu'
+#define HOME 302        						// Tasto Pagina Giu'
+#define END  303        						// Tasto Pagina Giu'
+#define ESC 27          						// Tasto ESCAPE
+#define X_COORD 3       						// Coord. X Display Help
+#define Y_COORD 5       						// Coord. Y Display Help
+#define MAX_ROW 16      						// Righe Max Display Help
+#define MAX_COL 70      						// Colonne Max Display Help
+
+// Messages
+
+#define msg_DONT_OPEN              "Can't open"
+#define msg_DONT_WRITE             "Can't write"
+#define msg_USER_DONT_HAVE_PERM    "The user has not permissions"
+#define msg_MENU_FILE_ERROR        "Menu file error"
+#define msg_THIS_IS_MAIN_MENU      "This is the main menu"
+#define msg_INVALID_SELECTION      "Invalid selection"
+#define msg_PARENT_MENU_CHANGED    "Parent menu changed"
 
 // File pointer
 
-FILE *infile, *fopen ();    					// File Generici di Input/Output      				
-FILE *ofile, *helpfile;     					// File Generici di Input/Output      				
+FILE *infile, *fopen ();    			// File Generici di Input/Output
+FILE *ofile, *helpfile;     			// File Generici di Input/Output
 
 //  Global variables
 
-signed char attrb[MAXR + 1][MAXC];  			// Campi di selezione Dati            				
-char vscreen[MAXR + 1][MAXC];   				// Schermo di Lavoro                  				
-char linea[200];        						// Buffer Globale Generico            				
+signed char attrb[MAXR + 1][MAXC];// Campi di selezione Dati
+char vscreen[MAXR + 1][MAXC];   	// Schermo di Lavoro
+char linea[200];        					// Buffer Globale Generico
 char finestra[23][200];
 int max_elem_fin = 0;
 int max_lun_fin = 0;
 int j = 0;
 char help_line[800][255];
-char nometemp[64];      						// File temporaneo                    				
-char lpdestenv[32];     						// Spazio environment x LPDEST        				
-char lpdestval[32];     						// Spazio environment x LPDEST        				
-char sistema[12];       						// Nome sistema                       				
-char imenu[80][40];     						// Catasta di Menu                    				
-char NULSTRING[] = { 0, 0 };    				// Stringa nulla statica per funzioni 				
-char titolo[40];        						// Titolo del menu                    				
-char editor[40];        						// Editor utilizzato (vi)             				
-char rvs_row[40];       						// Stringa di righe da evidenziare    				
-char rvs_tmp[40][10];       					// Stringa temp. di righe da evidenz. 				
-char shell[40];         						// Shell lanciata                     				
-char porta[20];         						// Nome tty di input                  				
-char utente[20];        						// Nome login di input                				
-char spoolernm[16];     						// Nome dello spooler assegnato       				
+char nometemp[64];      					// File temporaneo
+char lpdestenv[32];     					// Spazio environment x LPDEST
+char lpdestval[32];     					// Spazio environment x LPDEST
+char sistema[12];       					// Nome sistema
+char imenu[80][40];     					// Catasta di Menu
+char NULSTRING[] = { 0, 0 };    	// Stringa nulla statica per funzioni
+char titolo[40];        					// Titolo del menu
+char editor[40];        					// Editor utilizzato (vi)
+char rvs_row[40];       					// Stringa di righe da evidenziare
+char rvs_tmp[40][10];       			// Stringa temp. di righe da evidenz.
+char shell[40];         					// Shell lanciata
+char porta[20];         					// Nome tty di input
+char utente[20];        					// Nome login di input
+char spoolernm[16];     					// Nome dello spooler assegnato
 char ability_user[80];
 char prsuper[80];
 char pruser[80];
 char super_passwd[80];
-char menu_dir[64];      						// Nome directory dei menu            				
-char sh_passwd[64];     						// Nome parola chiave per shell       				
-char sh_passwd_ok = 0;      					// Flag parola chiave per shell       				
-char edit_passwd[64];       					// Nome parola chiave per edit menu   				
-char edit_passwd_ok = 0;    					// Flag parola chiave per edit menu   				
-char intflg = 0;        						// Flag Interrupt da subroutine       				
-char tfu[10][300];      						// Tasti Funzione Utente              				
-char lfu[10][20];       						// Label Tasti Funzione Utente        				
-char pfu[10][26];       						// Password Tasti Funzione Utente     				
-
-int selmenu[40];        						// Catasta di Menu                    				
+char menu_dir[64];      					// Nome directory dei menu
+char sh_passwd[64];     					// Nome parola chiave per shell
+char sh_passwd_ok = 0;      			// Flag parola chiave per shell
+char edit_passwd[64];       			// Nome parola chiave per edit menu
+char edit_passwd_ok = 0;    			// Flag parola chiave per edit menu
+char intflg = 0;        					// Flag Interrupt da subroutine
+char tfu[10][300];      					// Tasti Funzione Utente
+char lfu[10][20];       					// Label Tasti Funzione Utente
+char pfu[10][26];       					// Password Tasti Funzione Utente
+int selmenu[40];        					// Catasta di Menu
 int help_item = 0;
-int rvs_r;          							// Riga da evidenziare                				
-int ipmenu = 0;         						// Puntatore a Catasta di Menu        				
-int nitems;         							// Numero di Voci                     				
-int curitem;            						// Voce corrente                      				
-int iy = 21, ix = 1;        					// Posizione di default per input     				
-int keydisp = 1;        						// Flag Diplay Tasti Funzione         				
-int prdisp = 1;         						// Flag display Stampante             				
-int itime_out = 900;        					// Time Out di Procedura              				
-int mnu_tim = 1;        						// Inattivita tastiera attivata       				
-int bks_exit = 0;       						// Se 1 esce dal menu principale      				
-int neterr = 0;         						// Flag Errore di non trovato login   				
-int en, o = 0, junk, d;     					// Variabili generiche, contatori ecc. 				
+int rvs_r;          							// Riga da evidenziare
+int ipmenu = 0;         					// Puntatore a Catasta di Menu
+int nitems;         							// Numero di Voci
+int curitem;            					// Voce corrente
+int iy = 21, ix = 1;        			// Posizione di default per input
+int keydisp = 1;        					// Flag Diplay Tasti Funzione
+int prdisp = 1;         					// Flag display Stampante
+int itime_out = 900;        			// Time Out di Procedura
+int mnu_tim = 1;        					// Inattivita tastiera attivata
+int bks_exit = 0;       					// Se 1 esce dal menu principale
+int neterr = 0;         					// Flag Errore di non trovato login
+int en, o = 0, junk, d;     			// Variabili generiche, contatori ecc.
 int user = OFF;
 int super = OFF;
 int superpasswd = OFF;
 int passwd_mode = OFF;
-int inc = 0, memoinc = 0;   					// Variabile pointer file memorizzato 				
-int graf = 1;           						// Flag Grafica Abilitata (se=1)      				
-double procid;          						// Numero processo in corso           				
-long logfile_dim = LOGFILE_DIM; 				// Dimensione max file di log         				
-char env_var[80];       						// Stringa variabile d' ambiente      				
-char simb_var[80];      						// Stringa variabile simbolo          				
-char env_value[80];     						// Valore variabile d' environment    				
-char memofile[15000];       					// File memorizzato in un array       				
-char hlp_filename[60];      					// Nome file di Help                  				
-char to_found[60];      						// Stringa da ricercare nel file Help 				
-int mnuname_y;          						// Riga simbolo MNUNAME (Nome menu)   				
-int mnuname_x;          						// Colonna simbolo MNUNAME            				
-int mnuname_g;          						// Giustificazione simbolo MNUNAME    				
-int mnuname_flag = OFF;     					// Flag ON/OFF simbolo MNUNAME        				
-int mnuname_rvs = OFF;      					// Flag reverse on simbolo MNUNAME    				
-int msg_y;          							// Riga simbolo MSG (Messaggio Help)  				
-int msg_x;          							// Colonna simbolo MSG                				
-int msg_g;          							// Giustificazione simbolo MSG        				
-int msg_flag = OFF;     						// Flag ON/OFF simbolo MSG            				
-int msg_rvs = OFF;      						// Flag reverse on simbolo MSG        				
-int time_y;         							// Riga simbolo TIME (Orario)         				
-int time_x;         							// Colonna simbolo TIME               				
-int time_g;         							// Giustificazione simbolo TIME       				
-int time_flag = 0;      						// Flag ON/OFF simbolo TIME           				
-int time_rvs = OFF;     						// Flag reverse on simbolo TIME       				
-int title_y;            						// Riga simbolo TITLE (Titolo)        				
-int title_x;            						// Colonna simbolo TITLE              				
-int title_g;            						// Giustificazione simbolo TITLE      				
-int title_flag = 0;     						// Flag ON/OFF simbolo TITLE          				
-int title_rvs = OFF;        					// Flag reverse on simbolo TITLE      				
-int infoterm_y;         						// Riga simbolo INFOTERM (Info term.) 				
-int infoterm_x;         						// Colonna simbolo INFOTERM           				
-int infoterm_g;         						// Giustificazione simbolo INFOTER    				
-int infoterm_flag = 0;      					// Flag ON/OFF simbolo INFOTERM       				
-int infoterm_rvs = OFF;     					// Flag reverse on simbolo INFOTERM   				
-int mnutrace_y;         						// Riga simbolo MNUTRACE (Elenc.menu) 				
-int mnutrace_x;         						// Colonna simbolo MNUTRACE           				
-int mnutrace_g;         						// Giustificazione simbolo MNUTRACE   				
-int mnutrace_flag = 0;      					// Flag ON/OFF simbolo MNUTRACE       				
-int mnutrace_rvs = OFF;     					// Flag reverse on simbolo MNUTRACE   				
+int inc = 0, memoinc = 0;   			// Variabile pointer file memorizzato
+int graf = 1;           					// Flag Grafica Abilitata (se=1)
+double procid;          					// Numero processo in corso
+long logfile_dim = LOGFILE_DIM; 	// Dimensione max file di log
+char env_var[80];       					// Stringa variabile d' ambiente
+char simb_var[80];      					// Stringa variabile simbolo
+char env_value[80];     					// Valore variabile d' environment
+char memofile[15000];       			// File memorizzato in un array
+char hlp_filename[60];      			// Nome file di Help
+char to_found[60];      					// Stringa da ricercare nel file Help
+int mnuname_y;          					// Riga simbolo MNUNAME (Nome menu)
+int mnuname_x;          					// Colonna simbolo MNUNAME
+int mnuname_g;          					// Giustificazione simbolo MNUNAME
+int mnuname_flag = OFF;     			// Flag ON/OFF simbolo MNUNAME
+int mnuname_rvs = OFF;      			// Flag reverse on simbolo MNUNAME
+int msg_y;          							// Riga simbolo MSG (Messaggio Help)
+int msg_x;          							// Colonna simbolo MSG
+int msg_g;          							// Giustificazione simbolo MSG
+int msg_flag = OFF;     					// Flag ON/OFF simbolo MSG
+int msg_rvs = OFF;      					// Flag reverse on simbolo MSG
+int time_y;         							// Riga simbolo TIME (Orario)
+int time_x;         							// Colonna simbolo TIME
+int time_g;         							// Giustificazione simbolo TIME
+int time_flag = 0;      					// Flag ON/OFF simbolo TIME
+int time_rvs = OFF;     					// Flag reverse on simbolo TIME
+int title_y;            					// Riga simbolo TITLE (Titolo)
+int title_x;            					// Colonna simbolo TITLE
+int title_g;            					// Giustificazione simbolo TITLE
+int title_flag = 0;     					// Flag ON/OFF simbolo TITLE
+int title_rvs = OFF;        			// Flag reverse on simbolo TITLE
+int infoterm_y;         					// Riga simbolo INFOTERM (Info term.)
+int infoterm_x;         					// Colonna simbolo INFOTERM
+int infoterm_g;         					// Giustificazione simbolo INFOTER
+int infoterm_flag = 0;      			// Flag ON/OFF simbolo INFOTERM
+int infoterm_rvs = OFF;     			// Flag reverse on simbolo INFOTERM
+int mnutrace_y;         					// Riga simbolo MNUTRACE (Elenc.menu)
+int mnutrace_x;         					// Colonna simbolo MNUTRACE
+int mnutrace_g;         					// Giustificazione simbolo MNUTRACE
+int mnutrace_flag = 0;      			// Flag ON/OFF simbolo MNUTRACE
+int mnutrace_rvs = OFF;     			// Flag reverse on simbolo MNUTRACE
 int a = 0;
 
 // Menu struct
 
-struct menuitem         						
+struct menuitem
 {
-    char desc[80];        						// Descrizione a Video                				
-    char execute[300];        					// Comando Corrispondente Eseguito    				
-    char msg[80];         						// Messaggio descrittore del comando  				
-    char passw[26];       						// Eventuale Password                 				
-    int x;            							// Posizione x                        				
-    int y;            							// Posizione y                        				
-    int len;          							// Lunghezza Descizione               				
-    int inplen;           						// Lunghezza indice Selezione         				
-} scelta[MAXITEMS];     						// Massimo numero scelte (01-99,A-Z)  				
+    char desc[80];        					// Descrizione a Video
+    char execute[300];      				// Comando Corrispondente Eseguito
+    char msg[80];         					// Messaggio descrittore del comando
+    char passw[26];       					// Eventuale Password
+    int x;            							// Posizione x
+    int y;            							// Posizione y
+    int len;          							// Lunghezza Descizione
+    int inplen;           					// Lunghezza indice Selezione
+} scelta[MAXITEMS];     						// Massimo numero scelte (01-99,A-Z)
 
 struct form
 {
@@ -295,7 +304,7 @@ struct tm *tptr;
 
 // Main
 
-int main (int argc, char **argv)    	
+int main (int argc, char **argv)
 {
     int errorlvl = 0;    			 				/* Variabile controllo ritorno funz.   */
     int ii = 0, c, c1, t, idx;    					/* Variabili di utilizzo generale      */
@@ -332,9 +341,9 @@ int main (int argc, char **argv)
         exit (0);
     }
 
-    readcfg ();           							// Lettura Variabili d' ambiente      
-    strcat (imenu[ipmenu], argv[1]);  				// Rilevo il nome del Menu passato    
-    //strcat(imenu[ipmenu],".mnu");         		// Aggiungo estensione al nome menu   
+    readcfg ();           							// Lettura Variabili d' ambiente
+    strcat (imenu[ipmenu], argv[1]);  				// Rilevo il nome del Menu passato
+    //strcat(imenu[ipmenu],".mnu");         		// Aggiungo estensione al nome menu
     strcpy (menu_name, menu_dir);
     strcat (menu_name, imenu[ipmenu]);
 
@@ -347,11 +356,11 @@ int main (int argc, char **argv)
         fclose (infile);
 
     signal (SIGINT, fine1);   		// Interruzione utente (^C, Del, Trap)
-    signal (SIGFPE, fine2);   		// Errore Aritmetico                  
-    signal (SIGBUS, fine3);   		// Bus Error                          
-    signal (SIGSEGV, fine4);  		// Segmentation fault                 
-    signal (SIGTERM, fine5);  		// Segnale interruzione esterno       
-    signal (SIGALRM, templim);    	// Tempo di Inattiviva utente         
+    signal (SIGFPE, fine2);   		// Errore Aritmetico
+    signal (SIGBUS, fine3);   		// Bus Error
+    signal (SIGSEGV, fine4);  		// Segmentation fault
+    signal (SIGTERM, fine5);  		// Segnale interruzione esterno
+    signal (SIGALRM, templim);    	// Tempo di Inattiviva utente
 
     /* Lettura Variabili d' ambiente      */
     strcpy (porta, ttyname (fileno (stdin))); /* Identificazione porta              */
@@ -395,7 +404,7 @@ int main (int argc, char **argv)
     {
         if (errorlvl != 10)
         {
-            alert (" Warning ", " ERRORE IN FILE MENU ");
+            alert (" Warning ", msg_MENU_FILE_ERROR);
             errorlvl = 3;
         }
         beep ();
@@ -403,7 +412,7 @@ int main (int argc, char **argv)
     }
     clear ();
     dispmenu ();
-    history_string ("[INIZIO LAVORO]");
+    history_string ("[START]");
     curitem = 1;
     tmpcnt = 0;
     c = 0;
@@ -503,7 +512,7 @@ int main (int argc, char **argv)
                 smove (iy, ix - 1);
                 printw ("%.2d", c - 1000);
                 scarica ();
-                alert (" Warning ", " SELEZIONE NON VALIDA ");
+                alert (" Warning ", msg_INVALID_SELECTION);
                 dispmenu ();
                 selez (1);
                 c = 0;
@@ -516,7 +525,7 @@ int main (int argc, char **argv)
             continue;
         if (c == BKSP)        /* Ritorno a menu' Precedente */
         {
-            history_string ("[Menu precedente]");
+            history_string ("[Previuous menu]");
             ipmenu--;
             if (ipmenu < 0)
             {
@@ -525,7 +534,7 @@ int main (int argc, char **argv)
                 else
                 {
                     ipmenu = 0;
-                    alert (" Warning ", " QUESTO E' IL MENU PRINCIPALE ");
+                    alert (" Warning ", msg_THIS_IS_MAIN_MENU);
                     dispmenu ();
                     refresh ();
                     primavolta = 0;
@@ -537,7 +546,7 @@ int main (int argc, char **argv)
             }
             if ((errorlvl = loadmenu (imenu[ipmenu])))
             {
-                alert (" Warning ", " PARENT MENU CHANGED ");
+                alert (" Warning ", msg_PARENT_MENU_CHANGED);
                 goto the_end;
             }
             clear ();
@@ -569,7 +578,7 @@ int main (int argc, char **argv)
                     {
                         if (errorlvl != 10)
                         {
-                            alert (" Warning ", " ERROR ON MENU FILE ");
+                            alert (" Warning ", msg_MENU_FILE_ERROR);
                             errorlvl = 3;
                         }
                         goto the_end;
@@ -586,7 +595,7 @@ int main (int argc, char **argv)
                     {
                         if (errorlvl != 10)
                         {
-                            alert (" Warning ", " ERROR ON MENU FILE ");
+                            alert (" Warning ", msg_MENU_FILE_ERROR);
                             errorlvl = 3;
                         }
                         goto the_end;
@@ -601,7 +610,7 @@ int main (int argc, char **argv)
                 case 4:
                     if ((infile = fopen ("qmenu.log", "r")) == NULL)
                     {
-                        printw ("I can't open the file.\n");
+                        printw ("%s qmenu.log\n", msg_DONT_OPEN);
                         break;
                     }
                     help_item = 0;
@@ -633,21 +642,21 @@ int main (int argc, char **argv)
                     move (4, 3);
                     printw (" %s ", VERSION);
                     move (6, 3);
-                    printw (" quick menu for linux");
+                    printw (" quick menu");
                     move (8, 3);
-                    printw (" Created by Stefano Teodorani and Giovanni (Juan) Oteri");
+                    printw (" Created by S.Teodorani & G.Juan Oteri");
                     move (10, 3);
-                    printw (" Elenco files  : qmenu        - eseguibile");
+                    printw (" File list : qmenu        - main executable");
                     move (11, 3);
-                    printw("        qmenu.cfg     - file di configurazione");
+                    printw("        qmenu.cfg     - configuration file");
                     move (12, 3);
-                    printw("        qmenu.hlp     - file di help (facoltativo)");
+                    printw("        qmenu.hlp     - help file (mandatory)");
                     move (13, 3);
-                    printw("        qmenu.log     - file di log  (creato da qmenu)");
+                    printw("        qmenu.log     - log file (generated by qmenu)");
                     move (14, 3);
-                    printw("        qmenu.log.bak - file di log  (copia del vecchio)");
+                    printw("        qmenu.log.bak - backup log file");
                     move (15, 3);
-                    printw("        qmenu.frm     - file di form");
+                    printw("        qmenu.frm     - form file");
                     move (18, 4);
                     printw (" F4 - Exit ");
                     while ((a = getkey ()) != FZ4);
@@ -712,7 +721,7 @@ int main (int argc, char **argv)
                 {
                     clear ();
                     refresh ();
-                    history_string ("[END WORK]");
+                    history_string ("[END]");
                     goto the_end;
                 }
                 dispmenu ();
@@ -741,7 +750,7 @@ int main (int argc, char **argv)
                     errorlvl = loadmenu (imenu[ipmenu]);
                     if (errorlvl)
                     {
-                        alert (" Warning ", " PARENT MENU CHANGED ");
+                        alert (" Warning ", msg_PARENT_MENU_CHANGED);
                         goto the_end;
                     }
                 }
@@ -766,7 +775,7 @@ int main (int argc, char **argv)
                 }
                 if ((errorlvl = loadmenu (imenu[ipmenu])))
                 {
-                    alert (" Warning ", " PARENT MENU CHANGED ");
+                    alert (" Warning ", msg_PARENT_MENU_CHANGED);
                     goto the_end;
                 }
                 clear ();
@@ -809,7 +818,7 @@ int main (int argc, char **argv)
                 {
                     clear ();
                     refresh ();
-                    history_string ("[END WORK]");
+                    history_string ("[END]");
                     goto the_end;
                 }
                 dispmenu ();
@@ -840,7 +849,7 @@ int main (int argc, char **argv)
                     errorlvl = loadmenu (imenu[ipmenu]);
                     if (errorlvl)
                     {
-                        alert (" Warning ", " PARENT MENU CHANGED ");
+                        alert (" Warning ", msg_PARENT_MENU_CHANGED);
 
                         goto the_end;
                     }
@@ -917,7 +926,7 @@ int main (int argc, char **argv)
                 }
                 if ((errorlvl = loadmenu (imenu[ipmenu])))
                 {
-                    alert (" Warning ", " PARENT MENU CHANGED ");
+                    alert (" Warning ", msg_PARENT_MENU_CHANGED);
                     goto the_end;
                 }
                 dispmenu ();
@@ -1035,12 +1044,14 @@ the_exit:;          /* Label di fine procedura            */
     exit (curitem);
 }
 
-// Microhelp 
+// Microhelp
 
 void microhelp(char *message)
 {
-	printf ("\nqmenu   - %s ", VERSION);
-	printf ("quick menu - by Stefano Teodorani & Giovanni Oteri\n\n");
+	printf ("\n");
+  printf ("qmenu - %s - by S.Teodorani & G.Juan Oteri\n", VERSION);
+  printf ("source: https://github.com/teopost/qmenu\n");
+  printf ("\n");
 	printf ("usage : qmenu [-init] [-model] [menu_file]\n\n");
 	printf ("          -init : Creating configuration file \"qmenu.cfg\"\n");
 	printf ("          -model: Creating menu file model named \"model.mnu\"\n\n");
@@ -1279,14 +1290,14 @@ int loadmenu ()
     {
         if ((kk = getmemo (linea)) == -1)
         {
-            alert (" Warning ", "END FILE 2 MISSING, VERIFICARE VOCI MENU ");
+            alert (" Warning ", "END FILE 2 MISSING, CHECK MENU ITEMS ");
             return (3);
         }
         if ((linea[0] == '%') && (linea[1] == '%'))
             break;
         if (linea[0] != '%')
         {
-            alert (" Warning ", " MANCA %% PRIMA DELL' INDICE VOCE ");
+            alert (" Warning ", " MISSING SIMBOL %% ");
         }
         buf0[0] = 0;      /* Azzero Indice Voci numeriche */
         buf0[1] = 0;
@@ -1733,12 +1744,12 @@ int chkpass (int tipo)      /* Controllo parola Chiave  */
 
     tmp_passwd[ii] = '\0';
 
-    win (" ACCESSO RISERVATO ", 8, 15, 12, 65);
+    win (" RESERVED AREA ", 8, 15, 12, 65);
     move (12, 17);
     printw (" F4 - Esce ");
     standend ();
     move (10, 17);
-    printw (" Inserire Password : ");
+    printw (" Enter password : ");
     standout ();
     printw ("                        ");
     move (10, 38);
@@ -1749,7 +1760,7 @@ int chkpass (int tipo)      /* Controllo parola Chiave  */
     standout ();
     if (strcmp (cmpred, tmp_passwd) != 0)
     {
-        alert (" Warning ", " PAROLA CHIAVE ERRATA ");
+        alert (" Warning ", " WRONG PASSWORD ");
         clear ();
         dispmenu ();
         selez (1);
@@ -1765,12 +1776,12 @@ int chkinit ()          /* Controllo parola Chiave  */
 {
     char cmpred[40];      /* Variabile utilizzata per paragone */
 
-    win (" ACCESSO RISERVATO ", 8, 15, 12, 65);
+    win (" RESERVED AREA ", 8, 15, 12, 65);
     move (12, 17);
     printw (" F4 - Esce ");
     standend ();
     move (10, 17);
-    printw (" Inserire Password : ");
+    printw (" Enter password : ");
     standout ();
     printw ("                        ");
     move (10, 38);
@@ -1778,13 +1789,13 @@ int chkinit ()          /* Controllo parola Chiave  */
     getpasswd (cmpred);
     if (ricerca_passwd(cmpred))
     {
-        alert (ability_user, " ACCESSO ALLA PROCEDURA ABILITATO ");
+        alert (ability_user, " ACCESS GRANTED ");
         return 1;
     }
     else
     {
-        alert (" ACCESSO NEGATO ",
-               " L' UTENTE ATTUALE NON HA I PERMESSI NECESSARI PER CONTINUARE ");
+        alert (" Access Denied ",
+               msg_USER_DONT_HAVE_PERM);
         return 0;
     }
 }
@@ -1798,7 +1809,7 @@ int ricerca_passwd (char *etichetta)
 
     if ((infile = fopen ("qmenu.cfg", "r")) == NULL)
     {
-        history_string ("ERRORE, non riesco ad aprire qmenu.cfg");
+        history_string ("ERROR, Don't open qmenu.cfg");
         return 10;
     }
     else
@@ -1833,8 +1844,8 @@ int ricerca_passwd (char *etichetta)
     }
 }
 
-// Mostra selezioni tastiera a video 
-void inpsel (int op)     
+// Mostra selezioni tastiera a video
+void inpsel (int op)
 {
     char buf1[3];
     buf1[2] = 0;
@@ -1923,7 +1934,7 @@ void history_string (char *message)  /* Memorizza message in un LOGFILE */
     }
     else
     {
-        alert (" Warning ", "ERRORE IN SCRITTURA LOG");
+        alert (" Warning ", "Don't write log");
         clear ();
         dispmenu ();
         selez (1);
@@ -2104,7 +2115,7 @@ void fine5 ()
 }
 
 /* Slow move , move ritardata per problemi di refresh */
-void smove (int y, int x) 
+void smove (int y, int x)
 {
     if (y < 0)
         y = 0;
@@ -2316,7 +2327,7 @@ void selspool (int type_sel)     /* Selezione le stampanti */
     return;
 }
 
-// Estrazione per Help della label 
+// Estrazione per Help della label
 // ================================
 int ext (char *label)
 {
@@ -2382,8 +2393,8 @@ void helper ()
 
     win (" HELP ",
          X_COORD - 1,
-         Y_COORD - 2, 
-         X_COORD + MAX_ROW, 
+         Y_COORD - 2,
+         X_COORD + MAX_ROW,
          Y_COORD + MAX_COL);
 
     move (X_COORD + MAX_ROW, Y_COORD + 3);
@@ -2612,7 +2623,7 @@ void win (char *titolo, int x, int y, int z, int k)  /* Finestra con titolo */
 }
 
 // Print help message
-void hlpmsg () 
+void hlpmsg ()
 {
     int op = 0;
     int x_coord;
@@ -3123,7 +3134,7 @@ void readcfg ()
 
     if ((infile = fopen ("qmenu.cfg", "r")) == NULL)  /* Apertura file di config.   */
     {
-        history_string ("ERRORE, non riesco ad aprire il file configurazione");
+        history_string ("ERROR, Cant' open configuration file");
         return;
     }
     else
@@ -3367,10 +3378,10 @@ cre_cfg ()
 {
     if ((ofile = fopen ("qmenu.cfg", "w")) == NULL)
     {
-        printf ("Non riesco a scrivere il file qmenu.cfg\n");
+        printf ("%s qmenu.cfg\n", msg_DONT_WRITE);
         exit (0);
     }
-    printf ("Ricostruzione \"qmenu.cfg\"\n");
+    printf ("Rebuilding \"qmenu.cfg\"\n");
     fprintf (ofile, "\
 [Option]\n\
 MNU_TIM=1000\n\
@@ -3402,13 +3413,13 @@ cre_model ()
 {
     if ((ofile = fopen ("model.mnu", "w")) == NULL)
     {
-        printf ("Non riesco a scrivere il file model.mnu\n");
+        printf ("%s model.mnu\n", msg_DONT_WRITE);
         exit (0);
     }
-    printf ("Generazione \"model.mnu\"\n");
+    printf ("Creating \"model.mnu\"\n");
 
     fprintf (ofile, "\
- Intestazione Menu Modello                                          E[TIME] \n\
+ Template header                                                 E[TIME] \n\
 --------------------------------------------------------------------------------\n\
 \n\
                                    C[TITLE]\n\
@@ -3424,9 +3435,9 @@ cre_model ()
             ^9.   ................................................ ^\n\
             ^0.   ................................................ ^\n\
 \n\
-            ^F.   Fine Lavoro                                      ^\n\
+            ^F.   Exit                                             ^\n\
 \n\
-             Selezione..: [ &]\n\
+             Selection..: [ &]\n\
 \n\
                                c[MSG]\n\
 --------------------------------------------------------------------------------\n\
@@ -3478,13 +3489,13 @@ fine\n\
 \n\
 \n\
 %%%%\n\
-#[Opzioni Display]\n\
+#[Display options]\n\
 #=================\n\
-TITOLO=MODELLO DI MENU\n\
+TITOLO=MENU TITLE\n\
 RVS_ROW=0,22\n\
 \n\
-#[Configurazione Tasti Funzione]\n\
-#===============================\n\
+#[Function keys setting]\n\
+#=======================\n\
 NOKEYDISP\n\
 #KEYDISP\n\
 \n\
@@ -3528,7 +3539,7 @@ NOKEYDISP\n\
 #FZ10=\n\
 #PW10=\n\
 \n\
-[Varie]\n\
+[Others]\n\
 SHELL=sh\n\
 EDITOR=vi\n\
 ");
@@ -3553,7 +3564,7 @@ form (char *forma)
 
     if ((infile = fopen ("qmenu.frm", "r")) == NULL)  /* Apertura file di form    */
     {
-        history_string ("ERRORE, non riesco ad aprire il file qmenu.frm");
+        history_string ("ERROR, non riesco ad aprire il file qmenu.frm");
         return 10;
     }
     sprintf (da_trovare, "[%s]", forma);
@@ -3679,4 +3690,3 @@ void pausa ()
     refresh ();
     while ((u = getkey ()) != FZ4);
 }
-
