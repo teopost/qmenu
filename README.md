@@ -1,4 +1,10 @@
-# How install on Ubuntu
+# How install on Ubuntu and Debian
+Execute this command
+
+    sudo apt-get install qmenu
+
+
+# How compile
 You shoud compile qmenu with gcc.
 On ubuntu you should install ncurses library
 
@@ -6,7 +12,7 @@ On ubuntu you should install ncurses library
     make
     sudo make install
     qmenu m_main.mnu
-    
+
 ![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
 # How it works
@@ -63,7 +69,7 @@ Special variables:
 Example:
 
 	C[TITLE] - Menu title centered and in reverse
-	
+
 ## Item area
 In this section, for each menu item, you define:
 
@@ -83,7 +89,7 @@ The format to use for each item is composed by 4 lines:
 
     * A shell command
     * A submenu to open ($menuname without extension)
-    * Reserved command (return to go to the previous menu, end to quit menu) 
+    * Reserved command (return to go to the previous menu, end to quit menu)
 
 3. In the third line you specify the message.
 This message will be shown at the variable TITLE present in the "Screen area"
@@ -106,7 +112,7 @@ This section contains a series of generic settings:
     PW[1-10] - Password to set for the function key n
     SHELL=sh - Pressing shift-f1 starts a shell session
     EDITOR=vi - Pressing shift-f2 starts vi with the current menu
-    
+
 Each of these options can be commented out with #
 
 # Note
@@ -118,6 +124,3 @@ Thanks
 ---
 * First version named appsel created by  [Giovanni Juan Oteri](https://twitter.com/giovannioteri)
 * English translation of [Lorenzo Teodorani](https://github.com/teopost2)
-
-
-

@@ -1,3 +1,20 @@
+# Installazione
+Semplicemente, da terminale:
+
+    sudo apt-get install qmenu
+
+
+# Compilazione
+Per compilare qmenu occorre gcc
+Su ubuntu installare la libreria ncurses
+
+    sudo apt-get install libncurses5-dev libncursesw5-dev
+    make
+    sudo make install
+    qmenu m_main.mnu
+
+![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
+
 # Come funziona
 qmenu permette di creare in maniera semplice e intuitiva menu per interfacce a caratteri.
 Ogni menu è definito in un file (con estensione .mnu) che contiene sia l'aspetto visuale che la definizione delle varie voci.
@@ -54,7 +71,7 @@ Variabili speciali:
 Esempio:
 
 	C[TITLE] - Titolo del menu centrato ed in reverse
-	
+
 ## Item area
 In questa sezione, per ogni item di menu, si definisce:
 
@@ -75,7 +92,7 @@ Il formato da utilizzare per ogni item è composta da 4 righe:
 
     * Un comando di shell
     * Un sottomenu da aprire ($menuname without extension)
-    * Comando riservato (return per tornare al menu precedente, fine per uscire dal menu) 
+    * Comando riservato (return per tornare al menu precedente, fine per uscire dal menu)
 
 3. Nella terza riga specificare il messaggio di testo.
 Tale messaggio verrà mostrato in corrispondenza della variabile TITLE presente nella "Screen area"
@@ -99,8 +116,5 @@ Questa sezione contiene una sezie di impostazioni generiche:
     PW[1-10] - Password da impostare per tasto funzione n
     SHELL=sh - Premendo shift-f1 viene avviata una sessione di shell con questa
     EDITOR=vi - Premente shift-f2 viene avviato il vi con l'editing del menu attualmente in uso
-    
+
 Ognuna di queste opzioni può essere commentata con il #
-
-
-
