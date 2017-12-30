@@ -18,7 +18,7 @@ On ubuntu you should install ncurses library
 # How it works
 qmenu allows to create menus for interfaces and characters in an easy and intuitive way.
 Each menu is defined in a file (with extenision .mnu) that contains the visual appearance and the definition of the items.
-The file is divided oi three sections
+The file is divided on three sections
 
     1. Screen Area
     2. Item Area
@@ -123,4 +123,3 @@ Documentation in italian language is available here
 Thanks
 ---
 * First version named appsel created by  [Giovanni Juan Oteri](https://twitter.com/giovannioteri)
-* English translation of [Lorenzo Teodorani](https://github.com/teopost2)
