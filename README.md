@@ -4,7 +4,7 @@ Execute this command
     sudo apt-get install qmenu
 
 
-# How compile
+# How to compile on Ubuntu
 You shoud compile qmenu with gcc.
 On ubuntu you should install ncurses library
 
@@ -15,7 +15,7 @@ On ubuntu you should install ncurses library
 
 ![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
-# Centos/Oracle
+# # How to compile on Centos/Oracle
 
     yum install ncurses-devel
     make
