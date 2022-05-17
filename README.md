@@ -1,3 +1,7 @@
+# qmenu - ncurses menu creator
+
+![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
+
 # How install on Ubuntu and Debian
 Execute this command
 
@@ -12,8 +16,6 @@ On ubuntu you should install ncurses library
     make
     sudo make install
     qmenu m_main.mnu
-
-![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
 # # How to compile on Centos/Oracle
 
