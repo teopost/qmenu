@@ -1,4 +1,4 @@
-# qmenu - ncurses menu creator
+# Quick Menu - The terminal menu creator
 
 ![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
