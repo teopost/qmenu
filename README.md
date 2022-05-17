@@ -15,6 +15,13 @@ On ubuntu you should install ncurses library
 
 ![Demo](https://raw.githubusercontent.com/teopost/qmenu/master/qmenu.gif)
 
+# Centos/Oracle
+
+    yum install ncurses-devel
+    make
+    cp ./qmenu /usr/local/bin/
+    chmod 777 /usr/local/bin/qmenu
+    
 # How it works
 qmenu allows to create menus for interfaces and characters in an easy and intuitive way.
 Each menu is defined in a file (with extenision .mnu) that contains the visual appearance and the definition of the items.
