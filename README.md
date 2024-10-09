@@ -17,7 +17,7 @@ On ubuntu you should install ncurses library
     sudo make install
     qmenu m_main.mnu
 
-# # How to compile on Centos/Oracle
+# How to compile on Centos/Oracle
 
     yum install ncurses-devel
     make
